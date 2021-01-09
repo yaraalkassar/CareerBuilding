@@ -1,3 +1,5 @@
+import logo from '../images/goal.svg';
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 export default function Navbar() {
@@ -5,10 +7,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 lg:py-6 py-4 navbar-expand-lg bg-beige text-darkP text-sm">
+      <nav className="relative flex flex-wrap items-center justify-between px-4 lg:py-6 py-4 navbar-expand-lg">
         <div>
           <Link to="./">
-            <img src="../images/goal.svg" alt="logo" />
+            <img src={logo} className="w-16 h-16" alt="logo" />
           </Link>
         </div>
       </nav>
