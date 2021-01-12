@@ -8,10 +8,12 @@ export default function Navbar() {
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between px-4 lg:py-6 py-4 navbar-expand-lg">
-        <div className="w-1/5 flex">
+        <div className="w-1/5 flex justify-center items-end font-bold text-darkerBlue xl:text-2xl">
           <Link to="./">
             <img src={logo} className="w-16 h-16" alt="logo" />
+    
           </Link>
+          <h3> Career Building</h3>
         </div>
         <div className="flex justify-around ">
           <Link to="./" className="px-4">
