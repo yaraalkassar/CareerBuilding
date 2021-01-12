@@ -5,8 +5,7 @@ import Quotes from "./Quotes";
 
 function Home() {
   return (
-    <div>
-      <h1>{"hi"}</h1>
+    <div >
       <Connect />
       <Quotes /> <Footer />
     </div>
