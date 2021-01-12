@@ -11,7 +11,6 @@ export default function Navbar() {
         <div className="w-1/5 flex justify-center items-end font-bold text-darkerBlue xl:text-xl">
           <Link to="./">
             <img src={logo} className="w-16 h-16" alt="logo" />
-    
           </Link>
           <h3> Career Building</h3>
         </div>
@@ -36,7 +35,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex justify-around w-1/6">
-          <Link>
+          <Link to="./Join">
             <button
               className=" bg-darkBlue text-white w-24 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
               type="button"
@@ -45,7 +44,7 @@ export default function Navbar() {
               {"Join"}
             </button>
           </Link>
-          <Link>
+          <Link to="./Login">
             <button
               className=" bg-darkerBlue text-white w-24 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
               type="button"
