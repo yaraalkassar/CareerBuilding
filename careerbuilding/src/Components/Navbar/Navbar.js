@@ -18,7 +18,7 @@ export default function Navbar() {
           <Link to="./" className="px-4">
             <p className="lg:px-4 border-b hover:border-paleYellow">{"Home"}</p>
           </Link>
-          <Link to="./lol" className="px-4">
+          <Link to="./Vacancy" className="px-4">
             <p className="lg:px-4 border-b hover:border-paleYellow">
               {"Vacancies"}
             </p>
