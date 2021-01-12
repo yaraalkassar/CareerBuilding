@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar/Navbar.js";
 import Home from "./Components/Home/Home";
 function App() {
   return (
-    <div className="App">
+    <div className="App font-raleway">
       <Router>
         <Navbar />
         <Switch>
