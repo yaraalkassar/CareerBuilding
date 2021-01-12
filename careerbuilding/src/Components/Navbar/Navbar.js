@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-4 lg:py-6 py-4 navbar-expand-lg">
+      <nav className="relative flex flex-wrap items-center justify-between px-4 lg:py-6 py-4 navbar-expand-lg  overflow-hidden">
         <div className="w-1/5 flex justify-center items-end font-bold text-darkerBlue xl:text-xl">
           <Link to="./">
             <img src={logo} className="w-16 h-16" alt="logo" />

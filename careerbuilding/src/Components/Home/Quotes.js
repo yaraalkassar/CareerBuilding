@@ -51,7 +51,7 @@ const Quotes = () => {
                 {"Today's Quotes"}
               </h1>
             </div>
-            <div className="flex justify-center items-strech mx-auto">
+            <div className="flex flex-col lg:flex-row justify-center items-strech mx-auto">
               {quotes.slice(num, num + 3).map((quote, index) => {
                 return (
                   <div className="p-4 md:w-1/4" key={index}>
@@ -61,7 +61,7 @@ const Quotes = () => {
                           {quote.author === null ? "Unknown" : quote.author}
                         </h2>
                       </div>
-                      <div className="flex-grow">
+                      <div className="">
                         <p className="leading-relaxed text-base">
                           {quote.text === null ? "Unknown" : quote.text}
                         </p>

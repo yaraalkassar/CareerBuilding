@@ -2,7 +2,7 @@ const WhyUs = () => {
   return (
     <div className="bg-darkBlue font-bold text-2xl text-white pt-8">
       <h1> WHY CAREER BUILDING?</h1>
-      <div className="w-full flex flex-col flex-wrap md:flex-row md:justify-around mx-auto h-full py-12 items-stretch">
+      <div className="w-full flex flex-col md:flex-row md:justify-around mx-auto h-full py-12 items-center lg:items-stretch justify-between space-y-4 lg:space-y-0">
         <div className="w-2/3 lg:1/3 xl:w-1/5 rounded-lg bg-paleYellow shadow-xl">
           <div className="px-4 py-16 rounded ">
             <p className="text-darkerBlue text-3xl mb-8">Easy Apply</p>
