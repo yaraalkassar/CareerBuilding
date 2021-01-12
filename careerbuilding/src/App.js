@@ -12,8 +12,8 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/lol">
-            <p>{"lol"}</p>
+          <Route path="/Vacancy">
+            <p className="font-extrabold text-6xl">YET TO BE CREATED</p>
           </Route>
           <Route path="/Contact">
             <Contact />
