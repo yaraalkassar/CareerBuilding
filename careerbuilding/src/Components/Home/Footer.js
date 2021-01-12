@@ -1,10 +1,11 @@
 import React from "react";
-import Facebook from "../images/facebook.png";
-import Twitter from "../images/twitter.png";
-import Instagram from "../images/instagram.png";
+import Facebook from "../images/facebook.webp";
+import Twitter from "../images/twitter.webp";
+import Instagram from "../images/instagram.webp";
 import Quotes from "../images/quotes.svg";
 import Logo from "../images/goal.svg";
-import Linkedin from "../images/linkedin.png";
+import Linkedin from "../images/linkedin.webp";
+
 
 export default function Footer() {
   // async function addFeedback(body) {
@@ -20,11 +21,11 @@ export default function Footer() {
       <div className="border-b border-darkBlue py-8">
         <div className="container flex flex-col md:flex-row md:justify-between px-5 mx-auto">
           <div className="flex flex-wrap lg:text-left text-center mx-auto md:mx-0">
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4 text-center items-center">
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4 text-left items-center">
               <div className="leading-relaxed w-56 font-small ">
                 <p>{"The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle."}</p>
                 <img src={Quotes} className="ml-auto mr-2" alt="Quotes" />
-                <p> {"Steve Jobs"}</p>
+               
               </div>
             </div>
           </div>
@@ -47,7 +48,7 @@ export default function Footer() {
             <img src={Twitter} className="w-6 h-6" alt="Twitter" />
           </div>
           <div>
-            <img src={Linkedin} className="w-6 h-6" alt="linkedin" />
+            <img src={Linkedin} className="w-6 h-6" alt="TLinkedin" />
           </div>
         </div>
       </div>
