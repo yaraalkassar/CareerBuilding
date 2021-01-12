@@ -44,10 +44,10 @@ const Quotes = () => {
   return (
     <>
       <div className=" bg-white flex flex-col">
-        <section className="text-darkP">
-          <div className="container px-5 pt-2 py-32 mx-auto">
+        <section className="text-darkBlue">
+          <div className="container px-5 py-32 mx-auto">
             <div className="flex flex-col w-full mb-20">
-              <h1 className="sm:text-3xl text-2xl title-font text-darkP font-semibold">
+              <h1 className="sm:text-3xl text-2xl title-font text-darkerBlue font-semibold mt-4">
                 {"Today's Quotes"}
               </h1>
             </div>
