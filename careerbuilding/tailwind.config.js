@@ -174,6 +174,7 @@ module.exports = {
       DEFAULT: "1",
     },
     fontFamily: {
+      raleway: ["Raleway", "sans-serif"],
       sans: [
         "ui-sans-serif",
         "system-ui",

@@ -11581,6 +11581,10 @@ video {
   clear: none;
 }
 
+.font-raleway {
+  font-family: Raleway, sans-serif;
+}
+
 .font-sans {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -31812,6 +31816,8 @@ video {
   animation: bounce 1s infinite;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap");
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -42847,6 +42853,10 @@ video {
 
   .sm\:clear-none {
     clear: none;
+  }
+
+  .sm\:font-raleway {
+    font-family: Raleway, sans-serif;
   }
 
   .sm\:font-sans {
@@ -74074,6 +74084,10 @@ video {
     clear: none;
   }
 
+  .md\:font-raleway {
+    font-family: Raleway, sans-serif;
+  }
+
   .md\:font-sans {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
@@ -105297,6 +105311,10 @@ video {
 
   .lg\:clear-none {
     clear: none;
+  }
+
+  .lg\:font-raleway {
+    font-family: Raleway, sans-serif;
   }
 
   .lg\:font-sans {
@@ -136524,6 +136542,10 @@ video {
     clear: none;
   }
 
+  .xl\:font-raleway {
+    font-family: Raleway, sans-serif;
+  }
+
   .xl\:font-sans {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
@@ -167749,6 +167771,10 @@ video {
     clear: none;
   }
 
+  .\32xl\:font-raleway {
+    font-family: Raleway, sans-serif;
+  }
+
   .\32xl\:font-sans {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
@@ -187936,4 +187962,3 @@ video {
     animation: bounce 1s infinite;
   }
 }
-
