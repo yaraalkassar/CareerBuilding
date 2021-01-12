@@ -24,12 +24,12 @@ export default function Navbar() {
               {"Vacancies"}
             </p>
           </Link>
-          <Link to="./" className="px-4">
+          <Link to="./Contact" className="px-4">
             <p className="lg:px-4 border-b hover:border-paleYellow">
               {"Contact Us"}
             </p>
           </Link>
-          <Link to="./" className="px-4">
+          <Link to="./About" className="px-4">
             <p className="lg:px-4 border-b hover:border-paleYellow">
               {"About Us"}
             </p>
