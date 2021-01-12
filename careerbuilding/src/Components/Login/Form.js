@@ -2,14 +2,14 @@ import React from "react";
 
 const Form = () => {
   return (
-    <section className="text-gray-600 body-font ">
+    <section className="text-white body-font ">
       <div className="container px-5 py-24 mx-auto flex flex-wrap items-center justify-center">
         <div className="lg:w-1/4 md:w-1/2 bg-paleYellow rounded-lg p-8 flex flex-col  w-full mt-10 md:mt-0">
-          <h2 className="text-gray-900 text-lg font-medium title-font mb-5">
+          <h2 className="text-white text-lg font-medium title-font mb-5">
             Sign In
           </h2>
           <div className="flex flex-col items-start mb-4">
-            <label for="email" className="leading-7 text-sm text-gray-600">
+            <label for="email" className="leading-7 text-sm text-white">
               Email
             </label>
             <input
@@ -20,7 +20,7 @@ const Form = () => {
             />
           </div>
           <div className="flex flex-col items-start mb-4">
-            <label for="password" className="leading-7 text-sm text-gray-600">
+            <label for="password" className="leading-7 text-sm text-white">
               Password
             </label>
             <input
