@@ -26,6 +26,9 @@ export default function Connect() {
               </button>
             </Link>
           </div>
+         
+          
+        
         </div>
       </div>
       <img
