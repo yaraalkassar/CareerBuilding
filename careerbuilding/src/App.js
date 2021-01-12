@@ -22,7 +22,7 @@ function App() {
           </Route>
           <Route path="/">
             <Home />
-           
+    
           </Route>
         </Switch>
       </Router>
