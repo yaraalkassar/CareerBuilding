@@ -10,17 +10,7 @@ const SignUp = () => {
             <h2 className="text-gray-900 text-lg font-medium title-font mb-5">
               Sign Up
             </h2>
-            <div className="flex flex-col items-start mb-4">
-              <label for="username" className="leading-7 text-sm text-gray-600">
-                Username
-              </label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                className="w-full bg-white rounded border border-gray-300 focus:border-darkerBlue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
+
             <div className="flex flex-col items-start mb-4">
               <label for="email" className="leading-7 text-sm text-gray-600">
                 Email
