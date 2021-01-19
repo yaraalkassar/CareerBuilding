@@ -4,12 +4,13 @@ import Footer from "./Footer";
 import Quotes from "./Quotes";
 import WhyUs from "./WhyUs";
 
+
 function Home() {
   return (
     <div >
       <Connect />
-      <Quotes />
       <WhyUs/> 
+      <Quotes />
       <Footer />
     </div>
   );
