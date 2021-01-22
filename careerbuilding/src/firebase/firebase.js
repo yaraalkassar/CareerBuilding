@@ -329,16 +329,7 @@ class Firebase {
     return this.auth.currentUser.updateProfile({});
   }
 
-  async addUser(
-    isTherapist,
-    email,
-    expertise,
-    therapistBio,
-    cost,
-    certificate,
-    calendlyLink,
-    fullName
-  ) {
+  async addUser(isTherapist, email, logo, companyName) {
     if (!this.auth.currentUser) {
       return alert("not authorized");
     }
@@ -347,9 +338,7 @@ class Firebase {
       .doc(`${this.auth.currentUser.uid}`)
       .set({
         uid: this.auth.currentUser.uid,
-
         dateJoined: firebase.firestore.Timestamp.now(),
-        friends: [],
         about: {
           likes: "",
           dislikes: "",
@@ -359,12 +348,8 @@ class Firebase {
         isTherapist,
         email,
         ...(isTherapist && {
-          expertise,
-          therapistBio,
-          cost,
-          certificate,
-          calendlyLink,
-          fullName,
+          logo,
+          companyName,
         }),
       });
   }
