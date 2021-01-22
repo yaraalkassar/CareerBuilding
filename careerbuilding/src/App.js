@@ -27,7 +27,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/Vacancy">
-          <Vacancies/>
+            <Vacancies />
           </Route>
           <Route path="/Contact">
             <Contact />
@@ -41,7 +41,7 @@ function App() {
           <Route path="/Join">
             <SignUp />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/Home">
             <Home />
           </Route>
         </Switch>
