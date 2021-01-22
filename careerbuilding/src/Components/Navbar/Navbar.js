@@ -1,10 +1,9 @@
 import logo from "../images/goal.svg";
 import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  // let history = useHistory();
 
   return (
     <>
