@@ -74,8 +74,11 @@ const vacancies = () => {
             <label for="job-type " className="text-xs">
               Job Type:
             </label>
-            <div>
-              <select id="job-type" className="text-xs">
+            <div className="text-center ">
+              <select
+                id="job-type"
+                class="w-full text-center md:w-1/5 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-darkerBlue focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              >
                 <option>Full-Time</option>
                 <option>Part-Time</option>
               </select>
