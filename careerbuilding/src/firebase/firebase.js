@@ -69,7 +69,6 @@ class Firebase {
       .collection("messages")
       .add({
         senderId: this.auth.currentUser.uid,
-        senderAvatar: sender.profilePicture,
         senderUsername: sender.username,
         recipientId: recipient.uid,
         body,
@@ -325,25 +324,12 @@ class Firebase {
     this.auth.signOut();
   }
 
-  async register(username, email, password) {
+  async register(email, password) {
     await this.auth.createUserWithEmailAndPassword(email, password);
-    return this.auth.currentUser.updateProfile({
-      displayName: username,
-    });
+    return this.auth.currentUser.updateProfile({});
   }
 
-  async addUser(
-    username,
-    isTherapist,
-    email,
-    profilePicture,
-    expertise,
-    therapistBio,
-    cost,
-    certificate,
-    calendlyLink,
-    fullName
-  ) {
+  async addUser(isTherapist, email, logo, companyName) {
     if (!this.auth.currentUser) {
       return alert("not authorized");
     }
@@ -352,12 +338,7 @@ class Firebase {
       .doc(`${this.auth.currentUser.uid}`)
       .set({
         uid: this.auth.currentUser.uid,
-        username,
-        profilePicture: await this.storageRef
-          .child(`profile-images/default/image.svg`)
-          .getDownloadURL(),
         dateJoined: firebase.firestore.Timestamp.now(),
-        friends: [],
         about: {
           likes: "",
           dislikes: "",
@@ -367,13 +348,8 @@ class Firebase {
         isTherapist,
         email,
         ...(isTherapist && {
-          profilePicture,
-          expertise,
-          therapistBio,
-          cost,
-          certificate,
-          calendlyLink,
-          fullName,
+          logo,
+          companyName,
         }),
       });
   }

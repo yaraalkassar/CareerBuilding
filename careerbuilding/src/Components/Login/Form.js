@@ -9,7 +9,10 @@ const Form = () => {
             Sign In
           </h2>
           <div className="flex flex-col items-start mb-4">
-            <label for="email" className="leading-7 text-sm text-darkerBlue">
+            <label
+              htmlFor="email"
+              className="leading-7 text-sm text-darkerBlue"
+            >
               Email
             </label>
             <input
@@ -20,7 +23,10 @@ const Form = () => {
             />
           </div>
           <div className="flex flex-col items-start mb-4">
-            <label for="password" className="leading-7 text-sm text-darkerBlue">
+            <label
+              htmlFor="password"
+              className="leading-7 text-sm text-darkerBlue"
+            >
               Password
             </label>
             <input
