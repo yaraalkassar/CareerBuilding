@@ -9,6 +9,7 @@ import Login from "./Components/Login/Login";
 import SignUp from "./Components/SignUp/SignUp";
 import firebase from "./firebase/firebase";
 import Loader from "./Components/loader/loader";
+import Vacancies from "./Components/Vacancies/vacancies";
 
 function App() {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
@@ -25,7 +26,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/Vacancy">
-            <p className="font-extrabold text-6xl">YET TO BE CREATED</p>
+          <Vacancies/>
           </Route>
           <Route path="/Contact">
             <Contact />
