@@ -7,6 +7,7 @@ import Contact from "./Components/ContactUs/Contact";
 import About from "./Components/AboutUs/About";
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/SignUp/SignUp";
+
 import firebase from "./firebase/firebase";
 import Loader from "./Components/loader/loader";
 
@@ -39,7 +40,7 @@ function App() {
           <Route path="/Join">
             <SignUp />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
