@@ -10,6 +10,8 @@ import SignUp from "./Components/SignUp/SignUp";
 import firebase from "./firebase/firebase";
 import Loader from "./Components/loader/loader";
 import Vacancies from "./Components/Vacancies/vacancies";
+import Vacanciesstudent from "./Components/Vacancies/vacanciesstudent";
+import Moredetails from "./Components/Vacancies/moredetails";
 
 function App() {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
@@ -25,8 +27,14 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/Vacancy">
+        <Route exact path="Vacancy">
           <Vacancies/>
+          </Route>
+          <Route path="/Vacancy1">
+          <Vacanciesstudent/>
+          </Route>
+          <Route path="/Vacancy2">
+          <Moredetails/>
           </Route>
           <Route path="/Contact">
             <Contact />
