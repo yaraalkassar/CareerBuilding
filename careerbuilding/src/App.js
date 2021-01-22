@@ -1,4 +1,9 @@
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  Redirect,
+  BrowserRouter as Router,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar.js";
@@ -43,6 +48,9 @@ function App() {
           </Route>
           <Route exact path="/Home">
             <Home />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/Home" />
           </Route>
         </Switch>
       </Router>
