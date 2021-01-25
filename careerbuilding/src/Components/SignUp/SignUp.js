@@ -31,7 +31,7 @@ const SignUp = () => {
         <section className="text-gray-600 body-font ">
           <div className="container px-5 py-16 mx-auto flex flex-wrap items-center justify-center">
             <div className="lg:w-1/4 md:w-1/2 bg-paleBlue rounded-lg p-8 flex flex-col  w-full mt-10 md:mt-0">
-              <h2 className="text-gray-900 text-lg font-medium title-font mb-5">
+              <h2 className="text-darkerBlue text-lg md:text-2xl font-medium title-font mb-5">
                 Sign Up
               </h2>
               <form onSubmit={handleSubmit(onSubmit)}>
