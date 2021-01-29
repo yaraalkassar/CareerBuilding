@@ -12,7 +12,7 @@ import Contact from "./Components/ContactUs/Contact";
 import About from "./Components/AboutUs/About";
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/SignUp/SignUp";
-
+import Profile from "./Components/Profile/Profile";
 import firebase from "./firebase/firebase";
 import Loader from "./Components/loader/loader";
 import Vacancies from "./Components/Vacancies/vacancies";
@@ -33,14 +33,17 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/Vacancy">
+          <Route exact path="/Vacancy">
             <Vacancies />
           </Route>
-          <Route path="/Vacancy1">
-          <Vacanciesstudent/>
+          <Route path="/profile">
+            <Profile />
           </Route>
-          <Route path="/Vacancy2">
-          <Moredetails/>
+          <Route exact path="/Vacancy1">
+            <Vacanciesstudent />
+          </Route>
+          <Route exact path="/Vacancy2">
+            <Moredetails />
           </Route>
           <Route path="/Contact">
             <Contact />
