@@ -14,7 +14,7 @@ const vacancies = () => {
             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                for="job-name"
+                htmlFor="job-name"
               >
                 Job Name:
               </label>
@@ -28,7 +28,7 @@ const vacancies = () => {
             <div className="md:w-1/2 px-3">
               <label
                 className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                for="job-description"
+                htmlFor="job-description"
               >
                 Job Description:
               </label>
@@ -44,7 +44,7 @@ const vacancies = () => {
             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                for="Requirements"
+                htmlFor="Requirements"
               >
                 Requirements:
               </label>
@@ -58,7 +58,7 @@ const vacancies = () => {
             <div className="md:w-1/2 px-3">
               <label
                 className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                for="Responsibilities"
+                htmlFor="Responsibilities"
               >
                 Responsibilities:
               </label>
@@ -71,7 +71,7 @@ const vacancies = () => {
           </div>
 
           <div>
-            <label for="job-type " className="text-xs">
+            <label htmlFor="job-type " className="text-xs">
               Job Type:
             </label>
             <div className="text-center ">
