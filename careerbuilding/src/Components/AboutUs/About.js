@@ -46,8 +46,8 @@ const About = () => {
               OUR TEAM
             </h1>
           </div>
-          <div className="flex flex-wrap lg:w-3/4 mx-auto">
-            <div className="p-4 lg:w-1/2">
+          <div className="flex flex-wrap lg:w-3/4 mx-auto justify-center items-center">
+            <div className="p-4 lg:w-1/2 ">
               <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
                 <img
                   alt="team"
