@@ -1,5 +1,7 @@
 import React from "react";
 import AwroSoft from "../images/AwroSoft.png";
+import  UNDP from "../images/UNDP.jpg";
+import NYN from "../images/NYN.jpg";
 const vacanciesstudent = () => {
   return (
     <div>
@@ -9,35 +11,35 @@ const vacanciesstudent = () => {
         </div>
       </div>
 
-      <section class="text-darkerBlue body-font overflow-hidden">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="-my-8 divide-y-2 divide-gray-100">
-            <div class=" flex justify-center items-center py-8 flex flex-wrap md:flex-nowrap">
-              <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+      <section className="text-darkerBlue body-font overflow-hidden">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="-my-8 divide-y-2 divide-gray-100">
+            <div className=" flex justify-center items-center py-8 flex flex-wrap md:flex-nowrap">
+              <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                 <div className="flex justify-center items-center">
                   <img src={AwroSoft} className="w-20 h-20" alt="AwroSoft" />
                 </div>
-                <span class="font-semibold title-font text-gray-700">
+                <span className="font-semibold title-font text-gray-700">
                   AWRO SOFT COMPANY
                 </span>
-                <span class="mt-1 text-gray-500 text-sm">15 Jan 2021</span>
+                <span className="mt-1 text-gray-500 text-sm">15 Jan 2021</span>
               </div>
-              <div class="md:flex-grow">
-                <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+              <div className="md:flex-grow">
+                <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
                   Social Media Specialist
                 </h2>
-                <p class="leading-relaxed">
+                <p classNmae="leading-relaxed">
                   {" "}
                   Social Media Specialists are responsible for planning,
                   implementing and monitoring the company's Social Media
                   strategy in order to increase brand awareness, improve
                   Marketing efforts and increase sales.{" "}
                 </p>
-                <a class="text-darkerBlue inline-flex items-center mt-4 font-bold">
+                <a className="text-darkerBlue inline-flex items-center mt-4 font-bold">
                   {" "}
                   More Details
                   <svg
-                    class="w-4 h-4 ml-2"
+                    className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     stroke-width="2"
@@ -52,32 +54,32 @@ const vacanciesstudent = () => {
               </div>
             </div>
 
-            <div class="flex justify-center items-center py-8 flex flex-wrap md:flex-nowrap">
-              <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+            <div className="flex justify-center items-center py-8 flex flex-wrap md:flex-nowrap">
+              <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                 <div className="flex justify-center items-center">
-                  <img src={AwroSoft} className="w-20 h-20" alt="AwroSoft" />
+                  <img src={UNDP} className="w-20 h-20" alt="UNDP" />
                 </div>
-                <span class="font-semibold title-font text-gray-700">
-                  AWRO SOFT COMPANY
+                <span className="font-semibold title-font text-gray-700">
+                  UNDP IRAQ
                 </span>
-                <span class="mt-1 text-gray-500 text-sm">15 Jan 2021</span>
+                <span className="mt-1 text-gray-500 text-sm">18 Jan 2021</span>
               </div>
-              <div class="md:flex-grow">
-                <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
-                  Social Media Specialist
+              <div className="md:flex-grow">
+                <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
+                 Assistant Manager
                 </h2>
-                <p class="leading-relaxed">
+                <p className="leading-relaxed">
                   {" "}
-                  Social Media Specialists are responsible for planning,
-                  implementing and monitoring the company's Social Media
-                  strategy in order to increase brand awareness, improve
-                  Marketing efforts and increase sales.{" "}
+                  An Assistant Manager supports a General Manager in the daily responsibilities 
+                  required to keep a business running smoothly. 
+                  Assistant Managers direct employees and ensure that work is being completed in a 
+                  timely and effective manner. {" "}
                 </p>
-                <a class="text-darkerBlue inline-flex items-center mt-4 font-bold">
+                <a className="text-darkerBlue inline-flex items-center mt-4 font-bold">
                   {" "}
                   More Details
                   <svg
-                    class="w-4 h-4 ml-2"
+                    className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     stroke-width="2"
@@ -92,32 +94,31 @@ const vacanciesstudent = () => {
               </div>
             </div>
 
-            <div class="flex justify-center items-center py-8 flex flex-wrap md:flex-nowrap">
-              <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+            <div className="flex justify-center items-center py-8 flex flex-wrap md:flex-nowrap">
+              <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                 <div className="flex justify-center items-center">
-                  <img src={AwroSoft} className="w-20 h-20" alt="AwroSoft" />
+                  <img src={NYN} className="w-20 h-20" alt="NYN" />
                 </div>
-                <span class="font-semibold title-font text-gray-700">
-                  AWRO SOFT COMPANY
+                <span className="font-semibold title-font text-gray-700">
+                  NISHTMAN YOUTH NETWORK
                 </span>
-                <span class="mt-1 text-gray-500 text-sm">15 Jan 2021</span>
+                <span className="mt-1 text-gray-500 text-sm">20 Jan 2021</span>
               </div>
-              <div class="md:flex-grow">
-                <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
-                  Social Media Specialist
+              <div className="md:flex-grow">
+                <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
+                Marketing Strategy
                 </h2>
-                <p class="leading-relaxed">
+                <p className="leading-relaxed">
                   {" "}
-                  Social Media Specialists are responsible for planning,
-                  implementing and monitoring the company's Social Media
-                  strategy in order to increase brand awareness, improve
-                  Marketing efforts and increase sales.{" "}
+                  Marketing strategy responsible for the comprehensive plan formulated
+                    particularly for achieving the marketing objectives of the organization.
+                  {" "}
                 </p>
-                <a class="text-darkerBlue inline-flex items-center mt-4 font-bold">
+                <a className="text-darkerBlue inline-flex items-center mt-4 font-bold">
                   {" "}
                   More Details
                   <svg
-                    class="w-4 h-4 ml-2"
+                    className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     stroke-width="2"
