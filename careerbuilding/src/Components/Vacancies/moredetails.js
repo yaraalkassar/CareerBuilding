@@ -120,23 +120,23 @@ function moredetails() {
             </div>
           </div>
 
-          
           <div className="block uppercase tracking-wide text-darkerBlue text-s font-bold  py-8 pr-80 flex w-1/2">
-           <div><label>
-              upload CV:
-              <br />
-            </label>
-            <input
-              className="w-full  bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-darkerBlue focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              id="uploadcv"
-              type="file"
-            ></input></div> 
+            <div>
+              <label>
+                upload CV:
+                <br />
+              </label>
+              <input
+                className="w-full  bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-darkerBlue focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                id="uploadcv"
+                type="file"
+              ></input>
+            </div>
             <button className=" mt-5 flex mx-auto text-darkerBlue font-bold bg-paleYellow border-0 py-2 px-8 focus:outline-none hover:bg-dakBlue rounded text-lg">
               APPLY
             </button>
           </div>
         </div>
-        
       </form>
     </div>
   );

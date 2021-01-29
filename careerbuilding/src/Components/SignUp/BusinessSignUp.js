@@ -15,7 +15,7 @@ function BusinessSignUp({ email, password }) {
 
   return (
     <div className="container px-5 py-10 mx-auto flex flex-wrap items-center justify-center">
-      <div className="w-1/2 flex flex-col justify-center items-center">
+      <div className="md:w-1/2 flex flex-col justify-center items-center">
         <div className="py-3">
           <h2 className="text-darkerBlue text-lg md:text-2xl font-medium title-font mb-2">
             Business Sign Up
@@ -24,7 +24,7 @@ function BusinessSignUp({ email, password }) {
             Please bear with us, we need to know more about you!
           </p>
         </div>
-        <form className="w-3/4 bg-paleYellow p-8 text-darkP flex flex-col justify-evenly items-center rounded">
+        <form className="md:w-3/4 bg-paleYellow p-8 text-darkP flex flex-col justify-evenly items-center rounded">
           <div className="flex flex-col w-full mb-5">
             <div className="w-full mb-2 text-left">
               <label>Company Name:</label>

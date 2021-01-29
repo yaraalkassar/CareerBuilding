@@ -19,7 +19,10 @@ export const Contact = () => {
             <div className="flex flex-wrap ">
               <div className="p-2 w-1/2">
                 <div className="flex flex-col items-start">
-                  <label for="name" className="leading-7 text-sm text-gray-600">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600"
+                  >
                     Name
                   </label>
                   <input
@@ -33,7 +36,7 @@ export const Contact = () => {
               <div className="p-2 w-1/2">
                 <div className="flex flex-col items-start">
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="leading-7 text-sm text-gray-600"
                   >
                     Email
@@ -49,7 +52,7 @@ export const Contact = () => {
               <div className="p-2 w-full">
                 <div className="flex flex-col items-start">
                   <label
-                    for="message"
+                    htmlFor="message"
                     className="leading-7 text-sm text-gray-600"
                   >
                     Message
