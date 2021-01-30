@@ -17,7 +17,7 @@ export default function Navbar() {
                  cursor-pointer"
                 alt="logo"
               />
-              <h1>Career Building</h1>
+              <h1 className="font-bold text-darkerBlue text-2xl">Career Building</h1>
             </div>
           </NavLink>
 
