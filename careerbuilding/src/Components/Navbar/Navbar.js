@@ -10,13 +10,17 @@ export default function Navbar() {
       <nav className="relative flex flex-wrap items-center justify-between lg:px-12 lg:py-6 py-4 navbar-expand-lg overflow-hidden">
         <div className="w-full relative flex items-center justify-between lg:w-1/5 lg:static lg:block lg:justify-start">
           <NavLink to="/Home">
-            <img
-              src={logo}
-              className="w-16 md:w-20 lg:ml-0 md:ml-12 ml-8
+            <div className="flex justify-center items-center">
+              <img
+                src={logo}
+                className="w-16 md:w-20 lg:ml-0 md:ml-12 ml-8
                  cursor-pointer"
-              alt="logo"
-            />
+                alt="logo"
+              />
+              <h1>Career Building</h1>
+            </div>
           </NavLink>
+
           <button
             className={
               "text-darkerBlue cursor-pointer text-xl leading-none mr-4 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
