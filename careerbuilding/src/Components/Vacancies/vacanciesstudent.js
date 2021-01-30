@@ -2,6 +2,7 @@ import React from "react";
 import AwroSoft from "../images/AwroSoft.png";
 import  UNDP from "../images/UNDP.jpg";
 import NYN from "../images/NYN.jpg";
+import { Link } from "react-router-dom";
 const vacanciesstudent = () => {
   return (
     <div>
@@ -35,6 +36,7 @@ const vacanciesstudent = () => {
                   strategy in order to increase brand awareness, improve
                   Marketing efforts and increase sales.{" "}
                 </p>
+                <Link to="/moredetails">
                 <a className="text-darkerBlue inline-flex items-center mt-4 font-bold">
                   More Details
                   <svg
@@ -50,6 +52,7 @@ const vacanciesstudent = () => {
                     <path d="M12 5l7 7-7 7"></path>
                   </svg>
                 </a>
+                </Link>
               </div>
             </div>
 
@@ -74,6 +77,7 @@ const vacanciesstudent = () => {
                   Assistant Managers direct employees and ensure that work is being completed in a 
                   timely and effective manner. {" "}
                 </p>
+                <Link to="/moredetails2">
                 <a className="text-darkerBlue inline-flex items-center mt-4 font-bold">
                   {" "}
                   More Details
@@ -90,6 +94,7 @@ const vacanciesstudent = () => {
                     <path d="M12 5l7 7-7 7"></path>
                   </svg>
                 </a>
+                </Link>
               </div>
             </div>
 
@@ -113,6 +118,7 @@ const vacanciesstudent = () => {
                     particularly for achieving the marketing objectives of the organization.
                   {" "}
                 </p>
+                <Link to="/moredetails3">
                 <a className="text-darkerBlue inline-flex items-center mt-4 font-bold">
                   {" "}
                   More Details
@@ -129,6 +135,7 @@ const vacanciesstudent = () => {
                     <path d="M12 5l7 7-7 7"></path>
                   </svg>
                 </a>
+                </Link>
               </div>
             </div>
           </div>

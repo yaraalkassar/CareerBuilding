@@ -1,6 +1,6 @@
 import React from "react";
-import AwroSoft from "../images/AwroSoft.png";
-function moredetails() {
+import UNDP from "../images/UNDP.jpg";
+function moredetails2() {
   return (
     <div>
       <div className=" font-bold text-2xl text-darkerBlue pt-8">
@@ -12,12 +12,12 @@ function moredetails() {
       <div className=" flex justify-center items-center py-2 flex-wrap md:flex-nowrap ">
         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col ">
           <div className="flex justify-center items-center">
-            <img src={AwroSoft} className="w-20 h-20" alt="AwroSoft" />
+            <img src={UNDP} className="w-20 h-20" alt="UNDP" />
           </div>
           <span className="font-semibold title-font text-gray-700">
-            AWRO SOFT COMPANY
+            UNDP IRAQ
           </span>
-          <span className="mt-1 text-gray-500 text-sm">15 Jan 2021</span>
+          <span className="mt-1 text-gray-500 text-sm">18 Jan 2021</span>
         </div>
       </div>
 
@@ -30,7 +30,7 @@ function moredetails() {
             >
               Job Name:
             </label>
-            <p className="text-m  text-darkerBlue">Social Media Specialist</p>
+            <p className="text-m  text-darkerBlue">Assistant Manager</p>
           </div>
 
           <div className="md:w-2/5 px-3 ">
@@ -41,11 +41,9 @@ function moredetails() {
               Job Description:
             </label>
             <p className="text-m  text-darkerBlue">
-              A Social Media Specialist is responsible for creating and
-              administering content on all social media platforms, such as
-              Facebook, Instagram, and Twitter, to build an audience and ensure
-              customer engagement. The Specialist may also monitor site metrics,
-              respond to reader comments, and oversee creative design.
+            An Assistant Manager responsible for supports a General Manager in the daily responsibilities required 
+            to keep a business running smoothly. Assistant Managers direct employees and
+             ensure that work is being completed in a timely and effective manner.
             </p>
           </div>
         </div>
@@ -60,18 +58,16 @@ function moredetails() {
             </label>
             <div className="">
               <p className="text-m  text-darkerBlue">
-                1- Excellent consulting, writing, editing (photo/video/text),
-                presentation and communication skills.
+                1- Good communication skills, and the ability to convey information clearly and effectively
               </p>
               <br />
               <p className="text-m  text-darkerBlue">
-                2- Fluency in English, Kurdish and Arabic.
+                2- Fluency in English and Kurdish (required).
               </p>
 
               <br />
               <p className=" text-m  text-darkerBlue">
-                3- Positive attitude, detail and customer oriented with good
-                multitasking and organisational ability
+                3- Excellent time managementy
               </p>
             </div>
           </div>
@@ -84,20 +80,16 @@ function moredetails() {
               Responsibilities:
             </label>
             <p className="text-m  text-darkerBlue">
-              1- Build and execute social media strategy through competitive
-              research, platform determination, benchmarking, messaging and
-              audience identification.
+              1- Assist the General Manager as directed.
             </p>
             <br />
             <p className="text-m  text-darkerBlue">
-              2- Set up and optimize company pages within each platform to
-              increase the visibility of company’s social content.
+              2- Develop good customer relationships and address customer service needs.
             </p>
 
             <br />
             <p className=" text-m  text-darkerBlue">
-              3- Moderate all user-generated content in line with the moderation
-              policy for each community
+              3- Develop strategies for better workplace efficiency and goal achievement.
             </p>
           </div>
         </div>
@@ -110,7 +102,7 @@ function moredetails() {
             Job Type:
           </label>
           <div className="text-center text-darkerBlue ">
-            <p> Part-Time</p>
+            <p> Full-Time</p>
           </div>
         </div>
 
@@ -138,4 +130,4 @@ function moredetails() {
   );
 }
 
-export default moredetails;
+export default moredetails2;

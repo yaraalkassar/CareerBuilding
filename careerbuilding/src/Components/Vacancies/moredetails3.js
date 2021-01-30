@@ -1,6 +1,6 @@
 import React from "react";
-import AwroSoft from "../images/AwroSoft.png";
-function moredetails() {
+import NYN from "../images/NYN.jpg";
+function moredetails3() {
   return (
     <div>
       <div className=" font-bold text-2xl text-darkerBlue pt-8">
@@ -12,12 +12,12 @@ function moredetails() {
       <div className=" flex justify-center items-center py-2 flex-wrap md:flex-nowrap ">
         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col ">
           <div className="flex justify-center items-center">
-            <img src={AwroSoft} className="w-20 h-20" alt="AwroSoft" />
+            <img src={NYN} className="w-20 h-20" alt="NYN" />
           </div>
           <span className="font-semibold title-font text-gray-700">
-            AWRO SOFT COMPANY
+          NISHTMAN YOUTH NETWORK
           </span>
-          <span className="mt-1 text-gray-500 text-sm">15 Jan 2021</span>
+          <span className="mt-1 text-gray-500 text-sm">20 Jan 2021</span>
         </div>
       </div>
 
@@ -30,7 +30,7 @@ function moredetails() {
             >
               Job Name:
             </label>
-            <p className="text-m  text-darkerBlue">Social Media Specialist</p>
+            <p className="text-m  text-darkerBlue">Marketing Strategy</p>
           </div>
 
           <div className="md:w-2/5 px-3 ">
@@ -41,11 +41,8 @@ function moredetails() {
               Job Description:
             </label>
             <p className="text-m  text-darkerBlue">
-              A Social Media Specialist is responsible for creating and
-              administering content on all social media platforms, such as
-              Facebook, Instagram, and Twitter, to build an audience and ensure
-              customer engagement. The Specialist may also monitor site metrics,
-              respond to reader comments, and oversee creative design.
+            Marketing Strategist is a marketing professional who works with the marketing team member(s) to
+             assure the execution of high-quality marketing strategies within the defined time frame. 
             </p>
           </div>
         </div>
@@ -60,18 +57,16 @@ function moredetails() {
             </label>
             <div className="">
               <p className="text-m  text-darkerBlue">
-                1- Excellent consulting, writing, editing (photo/video/text),
-                presentation and communication skills.
+                1- Excellent communication, interpersonal and presentation skills.
               </p>
               <br />
               <p className="text-m  text-darkerBlue">
-                2- Fluency in English, Kurdish and Arabic.
+                2- Fluency in English and Kurdish and arabic.
               </p>
 
               <br />
               <p className=" text-m  text-darkerBlue">
-                3- Positive attitude, detail and customer oriented with good
-                multitasking and organisational ability
+                3- Outstanding organizational and time management skills.
               </p>
             </div>
           </div>
@@ -84,20 +79,16 @@ function moredetails() {
               Responsibilities:
             </label>
             <p className="text-m  text-darkerBlue">
-              1- Build and execute social media strategy through competitive
-              research, platform determination, benchmarking, messaging and
-              audience identification.
+              1- Set specific marketing goals that align with the overall direction and business goals.
             </p>
             <br />
             <p className="text-m  text-darkerBlue">
-              2- Set up and optimize company pages within each platform to
-              increase the visibility of company’s social content.
+              2- Research market to identify new opportunities.
             </p>
 
             <br />
             <p className=" text-m  text-darkerBlue">
-              3- Moderate all user-generated content in line with the moderation
-              policy for each community
+              3- Use customer feedback to ensure client satisfaction.
             </p>
           </div>
         </div>
@@ -110,7 +101,7 @@ function moredetails() {
             Job Type:
           </label>
           <div className="text-center text-darkerBlue ">
-            <p> Part-Time</p>
+            <p> Full-Time</p>
           </div>
         </div>
 
@@ -138,4 +129,4 @@ function moredetails() {
   );
 }
 
-export default moredetails;
+export default moredetails3;

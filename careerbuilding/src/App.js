@@ -18,6 +18,8 @@ import Loader from "./Components/loader/loader";
 import Vacancies from "./Components/Vacancies/vacancies";
 import Vacanciesstudent from "./Components/Vacancies/vacanciesstudent";
 import Moredetails from "./Components/Vacancies/moredetails";
+import Moredetails2 from "./Components/Vacancies/moredetails2";
+import Moredetails3 from "./Components/Vacancies/moredetails3";
 
 function App() {
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
@@ -42,8 +44,14 @@ function App() {
           <Route exact path="/Vacancy1">
             <Vacanciesstudent />
           </Route>
-          <Route exact path="/Vacancy2">
+          <Route exact path="/moredetails">
             <Moredetails />
+          </Route>
+          <Route exact path="/moredetails2">
+            <Moredetails2 />
+          </Route>
+          <Route exact path="/moredetails3">
+            <Moredetails3 />
           </Route>
           <Route path="/Contact">
             <Contact />
