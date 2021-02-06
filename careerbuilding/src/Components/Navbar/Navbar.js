@@ -10,14 +10,16 @@ export default function Navbar() {
       <nav className="relative flex flex-wrap items-center justify-between lg:px-12 lg:py-6 py-4 navbar-expand-lg overflow-hidden">
         <div className="w-full relative flex items-center justify-between lg:w-1/5 lg:static lg:block lg:justify-start">
           <NavLink to="/Home">
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-end">
               <img
                 src={logo}
                 className="w-16 md:w-20 lg:ml-0 md:ml-12 ml-8
                  cursor-pointer"
                 alt="logo"
               />
-              <h1 className="font-bold text-darkerBlue text-2xl">Career Building</h1>
+              <h1 className="font-bold text-darkerBlue text-xl italic w-1/2">
+                Career Building
+              </h1>
             </div>
           </NavLink>
 
