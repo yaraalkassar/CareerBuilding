@@ -11,7 +11,7 @@ import Home from "./Components/Home/Home";
 import Contact from "./Components/ContactUs/Contact";
 import About from "./Components/AboutUs/About";
 import Login from "./Components/Login/Login";
-import SignUp from "./Components/SignUp/SignUp";
+import SignUp from "./Components/SignUp/BusinessSignUp";
 import Profile from "./Components/Profile/Profile";
 import firebase from "./firebase/firebase";
 import Loader from "./Components/loader/loader";
