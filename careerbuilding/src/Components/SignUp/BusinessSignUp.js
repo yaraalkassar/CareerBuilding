@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import firebase from "./../../firebase/firebase";
 import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useForm } from "react-hook-form";
 
-function BusinessSignUp({ email, password }) {
+function BusinessSignUp() {
   let history = useHistory();
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [userName, setUserName] = useState("");
   const [businessLogo, setBusinessLogo] = useState("");
   const [position, setPosition] = useState("");
   const [number, setNumber] = useState("");
   const [location, setLocation] = useState("");
+  const { register, errors } = useForm();
 
   return (
     <div className="container px-5 py-10 mx-auto flex flex-wrap items-center justify-center">
@@ -25,6 +28,44 @@ function BusinessSignUp({ email, password }) {
           </p>
         </div>
         <form className="md:w-3/4 bg-paleYellow p-8 text-darkP flex flex-col justify-evenly items-center rounded">
+          <div className="flex flex-col items-start w-full mb-4">
+            <label htmlFor="email" className="w-full mb-2 text-left">
+              Email
+            </label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              ref={register({
+                required: "Required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "invalid email address",
+                },
+              })}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full bg-white rounded border border-gray-300 focus:border-darkerBlue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            />
+            <p className="error-color">
+              {errors.email && errors.email.message}
+            </p>
+          </div>{" "}
+          <div className="flex flex-col items-start w-full mb-4">
+            <label htmlFor="password" className="w-full mb-2 text-left">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              className="w-full bg-white rounded border border-gray-300 focus:border-darkerBlue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              minLength="6"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
           <div className="flex flex-col w-full mb-5">
             <div className="w-full mb-2 text-left">
               <label>Company Name:</label>
@@ -82,7 +123,6 @@ function BusinessSignUp({ email, password }) {
               ></input>
             </div>
           </div>
-
           <div className="flex flex-col w-full mb-5">
             <div className="w-full mb-2 text-left">
               <label>Position In Company:</label>
@@ -98,7 +138,6 @@ function BusinessSignUp({ email, password }) {
               ></input>
             </div>
           </div>
-
           <div className="flex flex-col w-full mb-5">
             <div className="w-full mb-2 text-left">
               <label>Company's Phone Number:</label>
@@ -179,9 +218,9 @@ function BusinessSignUp({ email, password }) {
   }
 }
 
-BusinessSignUp.propTypes = {
-  email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-};
+// BusinessSignUp.propTypes = {
+//   email: PropTypes.string.isRequired,
+//   password: PropTypes.string.isRequired,
+// };
 
 export default BusinessSignUp;

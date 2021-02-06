@@ -17,7 +17,9 @@ const SignUp = () => {
       history.push("/Join/Join-Business");
       setIsBusiness(false);
     } else {
-      onRegister();
+      onRegister().then(() => {
+        history.push("/profile");
+      });
     }
   };
 
@@ -34,7 +36,12 @@ const SignUp = () => {
               <h2 className="text-darkerBlue text-lg md:text-2xl font-medium title-font mb-5">
                 Sign Up
               </h2>
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  onRegister();
+                }}
+              >
                 <div className="flex flex-col items-start mb-4">
                   <label
                     htmlFor="email"
@@ -116,9 +123,14 @@ const SignUp = () => {
   );
   async function onRegister() {
     try {
-      await firebase.register(email, password);
-      await firebase.addUser(isBusiness, email);
-      history.push("/profile");
+      if (isBusiness) {
+        await firebase.register(email, password);
+        await firebase.addUser(isBusiness, email);
+        history.push("/profile");
+      } else {
+        await firebase.register(email, password);
+        history.push("/profile");
+      }
     } catch (error) {
       alert(error.message);
     }
