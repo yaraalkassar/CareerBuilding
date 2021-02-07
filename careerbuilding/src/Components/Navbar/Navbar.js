@@ -42,7 +42,7 @@ export default function Navbar() {
         >
           <div className="flex flex-col lg:flex-row">
             <NavLink
-              to="/Home"
+              to="/"
               className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
               activeClassName="border-paleYellow border-b"
             >
