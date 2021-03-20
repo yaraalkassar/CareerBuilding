@@ -9,7 +9,7 @@ export default function Navbar() {
     <>
       <nav className="relative flex flex-wrap items-center justify-between lg:px-12 lg:py-6 py-4 navbar-expand-lg overflow-hidden">
         <div className="w-full relative flex items-center justify-between lg:w-1/5 lg:static lg:block lg:justify-start">
-          <NavLink to="/Home">
+          <NavLink to="/">
             <div className="flex justify-center items-end">
               <img
                 src={logo}
