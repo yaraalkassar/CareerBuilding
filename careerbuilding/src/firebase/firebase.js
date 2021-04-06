@@ -193,7 +193,7 @@ class Firebase {
     const therapistsArr = [];
     return await this.db
       .collection("users")
-      .where("isTherapist", "==", true)
+      .where("isBusinessOwner", "==", true)
       .orderBy("dateJoined", "desc")
       .get()
       .then((data) => data.forEach((doc) => therapistsArr.push(doc.data())))
@@ -330,7 +330,7 @@ class Firebase {
   }
 
   async addUser(
-    isTherapist,
+    isBusinessOwner,
     email,
     companyName,
     businessLogo,
@@ -347,9 +347,9 @@ class Firebase {
       .set({
         uid: this.auth.currentUser.uid,
         dateJoined: firebase.firestore.Timestamp.now(),
-        isTherapist,
+        isBusinessOwner,
         email,
-        ...(isTherapist && {
+        ...(isBusinessOwner && {
           companyName,
           businessLogo,
           position,

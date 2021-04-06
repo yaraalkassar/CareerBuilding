@@ -181,7 +181,7 @@ function BusinessSignUp() {
                 Cancel
               </button>
             </div>
-            <div className="md:w-1/5 md:ml-2 ml-8">
+            <div className="md:w-1/3 md:ml-2 ml-8">
               <button
                 className="shadow bg-darkerBlue w-full focus:shadow-outline focus:outline-none text-white py-2 px-4 rounded"
                 type="button"

@@ -6,7 +6,8 @@ import Home from "./Components/Home/Home";
 import Contact from "./Components/ContactUs/Contact";
 import About from "./Components/AboutUs/About";
 import Login from "./Components/Login/Login";
-import SignUp from "./Components/SignUp/BusinessSignUp";
+import SignUp from "./Components/SignUp/SignUp";
+import BusinessSignUp from "./Components/SignUp/BusinessSignUp";
 import Profile from "./Components/Profile/Profile";
 import firebase from "./firebase/firebase";
 import Loader from "./Components/loader/loader";
@@ -59,6 +60,9 @@ function App() {
           </Route>
           <Route path="/Join">
             <SignUp />
+          </Route>
+          <Route path="/Join/Join-Business">
+            <BusinessSignUp />
           </Route>
           <Route exact path="/">
             <Home />

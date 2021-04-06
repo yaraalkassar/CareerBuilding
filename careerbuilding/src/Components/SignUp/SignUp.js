@@ -39,7 +39,7 @@ const SignUp = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  onRegister();
+                  onSubmit();
                 }}
               >
                 <div className="flex flex-col items-start mb-4">
@@ -126,7 +126,6 @@ const SignUp = () => {
       if (isBusiness) {
         await firebase.register(email, password);
         await firebase.addUser(isBusiness, email);
-        history.push("/profile");
       } else {
         await firebase.register(email, password);
         history.push("/profile");
