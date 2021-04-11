@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import QuoteIcon from "../images/quotes.svg";
-
+import { useStateIfMounted } from "use-state-if-mounted";
 const Quotes = () => {
-  const [quotes, setQuotes] = useState([]);
+  const [quotes, setQuotes] = useStateIfMounted([]);
   useEffect(() => {
     fetch("https://type.fit/api/quotes")
       .then(function (response) {

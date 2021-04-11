@@ -21,6 +21,7 @@
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
     "tailwindcss": "^2.0.3",
+    "use-state-if-mounted": "^1.0.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
