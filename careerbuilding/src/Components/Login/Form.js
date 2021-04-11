@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import firebase from "../../firebase/firebase";
+import { Link, useHistory } from "react-router-dom";
 
 const Form = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  let history = useHistory();
+  if (firebase.getCurrentUsername()) {
+    history.push("/profile");
+    return null;
+  }
+
   return (
     <section className="text-white body-font ">
       <div className="container px-5 py-24 mx-auto flex flex-wrap items-center justify-center">
@@ -19,6 +29,8 @@ const Form = () => {
               type="text"
               id="email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
@@ -33,16 +45,32 @@ const Form = () => {
               type="password"
               id="password"
               name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
-          <button className="text-white bg-darkerBlue border-0 py-2 px-8 focus:outline-none hover:bg-darkBlue rounded text-lg">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              login();
+            }}
+            className="text-white bg-darkerBlue border-0 py-2 px-8 focus:outline-none hover:bg-darkBlue rounded text-lg"
+          >
             Sign In
           </button>
         </div>
       </div>
     </section>
   );
+  async function login() {
+    try {
+      await firebase.login(email, password);
+      history.push("/profile");
+    } catch (error) {
+      alert(error.message);
+    }
+  }
 };
 
 export default Form;
