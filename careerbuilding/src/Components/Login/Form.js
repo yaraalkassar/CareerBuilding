@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import firebase from "../../firebase/firebase";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Form = () => {
   const [email, setEmail] = useState("");
