@@ -11,7 +11,7 @@ import BusinessSignUp from "./Components/SignUp/BusinessSignUp";
 import Profile from "./Components/Profile/Profile";
 import firebase from "./firebase/firebase";
 import Loader from "./Components/loader/loader";
-import Vacancies from "./Components/Vacancies/vacancies";
+import Vacancies from "./Components/Vacancies/Vacancies";
 import Vacanciesstudent from "./Components/Vacancies/vacanciesstudent";
 import Moredetails from "./Components/Vacancies/moredetails";
 import Moredetails2 from "./Components/Vacancies/moredetails2";

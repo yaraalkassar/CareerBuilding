@@ -30,52 +30,6 @@ class Firebase {
     this.conversationId = null;
   }
 
-  async getUserConversations(setUsersDocs) {
-    const conversations = [];
-    const otherUsersIds = [];
-    const usersDocs = [];
-
-    await this.db
-      .collection("conversations")
-      .where("users", "array-contains", `${this.auth.currentUser.uid}`)
-      .onSnapshot(async (snapshot) => {
-        snapshot.forEach((doc) => {
-          conversations.push({
-            ...doc.data(),
-            id: doc.id,
-          });
-        });
-
-        conversations.forEach((conversation) =>
-          otherUsersIds.push(
-            conversation.users.filter(
-              (user) => !user.includes(`${this.auth.currentUser.uid}`)
-            )[0]
-          )
-        );
-
-        for (let uid of otherUsersIds) {
-          await this.getUser(uid).then((doc) => usersDocs.push(doc));
-        }
-
-        setUsersDocs(usersDocs);
-      });
-  }
-
-  async sendMessage(sender, recipient, body) {
-    await this.db
-      .collection("conversations")
-      .doc(`${this.conversationId}`)
-      .collection("messages")
-      .add({
-        senderId: this.auth.currentUser.uid,
-        senderUsername: sender.username,
-        recipientId: recipient.uid,
-        body,
-        createdAt: this.firestore.Timestamp.now(),
-      });
-  }
-
   async queryUsersCollectionForMatchingUsername(searchedValue, setFoundUsers) {
     const foundUsers = [];
     return await this.db
@@ -86,33 +40,6 @@ class Firebase {
         data.forEach((doc) => foundUsers.push({ uid: doc.id, ...doc.data() }))
       )
       .then(() => setFoundUsers(foundUsers));
-  }
-
-  async getAllTherapists(setTherapistsArr) {
-    const therapistsArr = [];
-    return await this.db
-      .collection("users")
-      .where("isBusinessOwner", "==", true)
-      .orderBy("dateJoined", "desc")
-      .get()
-      .then((data) => data.forEach((doc) => therapistsArr.push(doc.data())))
-      .then(() => setTherapistsArr(therapistsArr));
-  }
-
-  async listenForCreatedChatroom(setRoomIsCreated) {
-    const self = this;
-    this.unsubscribe = await this.db
-      .collection("chatrooms")
-      .where("memberId", "==", this.auth.currentUser.uid)
-      .onSnapshot((snapshot) => {
-        snapshot.docChanges().forEach(function (change) {
-          if (change.type === "added") {
-            self.listenerId = change.doc.data().listenerId;
-            self.chatroomObj = change.doc.data();
-            setRoomIsCreated();
-          }
-        });
-      });
   }
 
   login(email, password) {
@@ -191,54 +118,36 @@ class Firebase {
       console.log("Uploaded a blob or file!");
     });
   }
-  async createPost(body) {
-    const id = this.db.collection("posts").doc().id;
+  async createVacancy(j_name, j_desc, j_req, j_resp, j_type) {
+    const id = this.db.collection("vacancies").doc().id;
     await this.db
-      .collection("posts")
+      .collection("vacancies")
       .doc(id)
       .set({
-        postId: id,
-        authorId: this.getCurrentUid(),
-        createdAt: new Date().toLocaleString("en-US"),
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        authorName: this.getCurrentUsername(),
-        authorAvatar: this.currentUser.profilePicture,
-        text: body,
-        likes: 0,
-      })
-      .catch((err) => console.log(err));
-  }
-  async addLike(post) {
-    const id = post.postId;
-    await this.db
-      .collection("posts")
-      .doc(id)
-      .update({
-        likes: post.likes + 1,
+        v_Id: id,
+        // authorId: this.getCurrentUid(),
+        // createdAt: new Date().toLocaleString("en-US"),
+        // timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        // authorName: this.getCurrentUsername(),
+        // authorAvatar: this.currentUser.profilePicture,
+        j_name: j_name,
+        j_desc: j_desc,
+        j_req: j_req,
+        j_resp: j_resp,
+        j_type: j_type,
       })
       .catch((err) => console.log(err));
   }
 
-  async removeLike(post) {
-    const id = post.postId;
-    await this.db
-      .collection("posts")
-      .doc(id)
-      .update({
-        likes: post.likes - 1,
-      })
-      .catch((err) => console.log(err));
-  }
-
-  async getPosts(setPosts) {
+  async getVacanies(setVacancies) {
     this.db
-      .collection("posts")
+      .collection("vacancies")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
-        const posts = snapshot.docs.map((post) => {
+        const vacancies = snapshot.docs.map((post) => {
           return post.data();
         });
-        setPosts(posts);
+        setVacancies(vacancies);
       });
   }
 
