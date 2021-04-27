@@ -18,6 +18,11 @@ import Moredetails2 from "./Components/Vacancies/moredetails2";
 import Moredetails3 from "./Components/Vacancies/moredetails3";
 
 function App() {
+  const [userSigned, setUserSigned] = useState();
+  useEffect(() => {
+    setUserSigned(firebase.checkUser());
+  }, []);
+
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
 
   useEffect(() => {

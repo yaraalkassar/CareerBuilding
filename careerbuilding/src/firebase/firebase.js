@@ -95,6 +95,16 @@ class Firebase {
     return this.auth.currentUser && this.auth.currentUser.displayName;
   }
 
+  checkUser() {
+    this.auth.onAuthStateChanged(function (user) {
+      if (user) {
+        console.log("hi");
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
   getCurrentUid() {
     return this.auth.currentUser && this.auth.currentUser.uid;
   }
