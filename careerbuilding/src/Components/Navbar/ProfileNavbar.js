@@ -9,14 +9,6 @@ export default function ProfileNavbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [userSigned, setUserSigned] = useState();
 
-  useEffect(() => {
-    setUserSigned(firebase.getCurrentUsername());
-    console.log(firebase.checkUser());
-    console.log(firebase.getCurrentUsername());
-    console.log(userSigned);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between lg:px-12 lg:py-6 py-4 navbar-expand-lg overflow-hidden">

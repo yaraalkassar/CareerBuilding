@@ -2,6 +2,8 @@ import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar.js";
+import ProfileNavbar from "./Components/Navbar/ProfileNavbar";
+
 import Home from "./Components/Home/Home";
 import Contact from "./Components/ContactUs/Contact";
 import About from "./Components/AboutUs/About";
@@ -18,11 +20,9 @@ import Moredetails2 from "./Components/Vacancies/moredetails2";
 import Moredetails3 from "./Components/Vacancies/moredetails3";
 
 function App() {
-  const [userSigned, setUserSigned] = useState();
+  const [userSigned, setUserSigned] = useState(false);
   useEffect(() => {
-    if (firebase.auth.currentUser) {
-      console.log("exists");
-    }
+    firebase.userUpdated(setUserSigned);
   }, []);
 
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
@@ -36,7 +36,7 @@ function App() {
   return firebaseInitialized !== false ? (
     <div className="App font-raleway">
       <Router>
-        <Navbar />
+        {userSigned ? <ProfileNavbar /> : <Navbar />}
         <Switch>
           <Route exact path="/PostVacancy">
             <Vacancies />

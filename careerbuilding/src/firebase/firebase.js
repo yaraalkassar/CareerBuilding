@@ -95,16 +95,16 @@ class Firebase {
     return this.auth.currentUser && this.auth.currentUser.displayName;
   }
 
-  checkUser() {
+  userUpdated(callback) {
     this.auth.onAuthStateChanged(function (user) {
       if (user) {
-        console.log("hi");
-        return true;
+        callback(true);
       } else {
-        return false;
+        callback(false);
       }
     });
   }
+
   getCurrentUid() {
     return this.auth.currentUser && this.auth.currentUser.uid;
   }
