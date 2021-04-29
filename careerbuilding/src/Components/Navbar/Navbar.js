@@ -1,206 +1,102 @@
 import logo from "../images/goal.svg";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
-import { NavLink, useHistory } from "react-router-dom";
-import firebase from "../../firebase/firebase";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
-  let history = useHistory();
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [userSigned, setUserSigned] = useState();
 
-  useEffect(() => {
-    setUserSigned(firebase.getCurrentUsername());
-    console.log(firebase.checkUser());
-
-    console.log(firebase.getCurrentUsername());
-    console.log(userSigned);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  if (!userSigned) {
-    return (
-      <>
-        <nav className="relative flex flex-wrap items-center justify-between lg:px-12 lg:py-6 py-4 navbar-expand-lg overflow-hidden">
-          <div className="w-full relative flex items-center justify-between lg:w-1/5 lg:static lg:block lg:justify-start">
-            <NavLink to="/">
-              <div className="flex justify-center items-end">
-                <img
-                  src={logo}
-                  className="w-16 md:w-20 lg:ml-0 md:ml-12 ml-8
+  return (
+    <>
+      <nav className="relative flex flex-wrap items-center justify-between lg:px-12 lg:py-6 py-4 navbar-expand-lg overflow-hidden">
+        <div className="w-full relative flex items-center justify-between lg:w-1/5 lg:static lg:block lg:justify-start">
+          <NavLink to="/">
+            <div className="flex justify-center items-end">
+              <img
+                src={logo}
+                className="w-16 md:w-20 lg:ml-0 md:ml-12 ml-8
                  cursor-pointer"
-                  alt="logo"
-                />
-                <h1 className="font-bold text-darkerBlue text-xl italic w-1/2">
-                  Career Building
-                </h1>
-              </div>
-            </NavLink>
+                alt="logo"
+              />
+              <h1 className="font-bold text-darkerBlue text-xl italic w-1/2">
+                Career Building
+              </h1>
+            </div>
+          </NavLink>
 
-            <button
-              className={
-                "text-darkerBlue cursor-pointer text-xl leading-none mr-4 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-              }
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
+          <button
+            className={
+              "text-darkerBlue cursor-pointer text-xl leading-none mr-4 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            }
+            type="button"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+          >
+            <FiMenu className="text-2xl" />
+          </button>
+        </div>
+        <div
+          className={
+            " lg:flex flex-grow items-center justify-around pt-4" +
+            (navbarOpen ? " flex flex-col" : " hidden")
+          }
+          id="example-navbar-danger"
+        >
+          <div className="flex flex-col lg:flex-row">
+            <NavLink
+              exact
+              to="/"
+              className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
+              activeClassName="border-paleYellow border-b"
             >
-              <FiMenu className="text-2xl" />
-            </button>
+              <p className="lg:px-4 ">{"Home"}</p>
+            </NavLink>
+            <NavLink
+              to="/Vacancy"
+              className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
+              activeClassName="border-paleYellow border-b"
+            >
+              <p className="lg:px-4 ">{"Vacancies"}</p>
+            </NavLink>
+            <NavLink
+              to="/Contact"
+              className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
+              activeClassName="border-paleYellow border-b"
+            >
+              <p className="lg:px-4 ">{"Contact Us"}</p>
+            </NavLink>
+            <NavLink
+              to="/About"
+              className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
+              activeClassName="border-paleYellow border-b"
+            >
+              <p className="lg:px-4 ">{"About Us"}</p>
+            </NavLink>
           </div>
           <div
-            className={
-              " lg:flex flex-grow items-center justify-around pt-4" +
-              (navbarOpen ? " flex flex-col" : " hidden")
-            }
-            id="example-navbar-danger"
-          >
-            <div className="flex flex-col lg:flex-row">
-              <NavLink
-                exact
-                to="/"
-                className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
-                activeClassName="border-paleYellow border-b"
-              >
-                <p className="lg:px-4 ">{"Home"}</p>
-              </NavLink>
-              <NavLink
-                to="/Vacancy"
-                className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
-                activeClassName="border-paleYellow border-b"
-              >
-                <p className="lg:px-4 ">{"Vacancies"}</p>
-              </NavLink>
-              <NavLink
-                to="/Contact"
-                className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
-                activeClassName="border-paleYellow border-b"
-              >
-                <p className="lg:px-4 ">{"Contact Us"}</p>
-              </NavLink>
-              <NavLink
-                to="/About"
-                className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
-                activeClassName="border-paleYellow border-b"
-              >
-                <p className="lg:px-4 ">{"About Us"}</p>
-              </NavLink>
-            </div>
-            <div
-              className={` justify-around w-1/6 py-4 md:pt-0 space-x-4 flex
+            className={` justify-around w-1/6 py-4 md:pt-0 space-x-4 flex
               }`}
-            >
-              <NavLink to="/Join">
-                <button
-                  className=" bg-darkBlue text-white lg:w-24 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style={{ transition: "all .15s ease" }}
-                >
-                  {"Join"}
-                </button>
-              </NavLink>
-              <NavLink to="/Login">
-                <button
-                  className=" bg-darkerBlue text-white lg:w-24 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style={{ transition: "all .15s ease" }}
-                >
-                  {"Login"}
-                </button>
-              </NavLink>
-            </div>
-          </div>
-        </nav>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <nav className="relative flex flex-wrap items-center justify-between lg:px-12 lg:py-6 py-4 navbar-expand-lg overflow-hidden">
-          <div className="w-full relative flex items-center justify-between lg:w-1/5 lg:static lg:block lg:justify-start">
-            <NavLink to="/">
-              <div className="flex justify-center items-end">
-                <img
-                  src={logo}
-                  className="w-16 md:w-20 lg:ml-0 md:ml-12 ml-8
-                 cursor-pointer"
-                  alt="logo"
-                />
-                <h1 className="font-bold text-darkerBlue text-xl italic w-1/2">
-                  Career Building
-                </h1>
-              </div>
-            </NavLink>
-
-            <button
-              className={
-                "text-darkerBlue cursor-pointer text-xl leading-none mr-4 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-              }
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              <FiMenu className="text-2xl" />
-            </button>
-          </div>
-          <div
-            className={
-              " lg:flex flex-grow items-center justify-around pt-4" +
-              (navbarOpen ? " flex flex-col" : " hidden")
-            }
-            id="example-navbar-danger"
           >
-            <div className="flex flex-col lg:flex-row">
-              <NavLink
-                exact
-                to="/"
-                className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
-                activeClassName="border-paleYellow border-b"
+            <NavLink to="/Join">
+              <button
+                className=" bg-darkBlue text-white lg:w-24 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                type="button"
+                style={{ transition: "all .15s ease" }}
               >
-                <p className="lg:px-4 ">{"Home"}</p>
-              </NavLink>
-              <NavLink
-                to="/Vacancy"
-                className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
-                activeClassName="border-paleYellow border-b"
+                {"Join"}
+              </button>
+            </NavLink>
+            <NavLink to="/Login">
+              <button
+                className=" bg-darkerBlue text-white lg:w-24 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                type="button"
+                style={{ transition: "all .15s ease" }}
               >
-                <p className="lg:px-4 ">{"Vacancies"}</p>
-              </NavLink>
-              <NavLink
-                to="/Contact"
-                className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
-                activeClassName="border-paleYellow border-b"
-              >
-                <p className="lg:px-4 ">{"Contact Us"}</p>
-              </NavLink>
-              <NavLink
-                to="/About"
-                className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
-                activeClassName="border-paleYellow border-b"
-              >
-                <p className="lg:px-4 ">{"About Us"}</p>
-              </NavLink>
-            </div>
-            <div className={`flex justify-around w-1/6 py-4 md:pt-0  `}>
-              <NavLink to="/">
-                <button
-                  className=" bg-darkBlue text-white lg:w-24 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  onClick={() => {
-                    logout();
-                  }}
-                  style={{ transition: "all .15s ease" }}
-                >
-                  {"Log Out"}
-                </button>
-              </NavLink>
-            </div>
+                {"Login"}
+              </button>
+            </NavLink>
           </div>
-        </nav>
-      </>
-    );
-  }
-
-  async function logout() {
-    await firebase.logout();
-    history.push("/login");
-  }
+        </div>
+      </nav>
+    </>
+  );
 }
