@@ -73,7 +73,6 @@ function BusinessSignUp() {
             <div>
               <input
                 className="border border-darkP rounded w-full py-2 px-4  leading-tight focus:outline-none focus:bg-white focus:border-darkBeige"
-                id="inline-full-name"
                 type="text"
                 placeholder="Your Company's Name"
                 value={companyName}
@@ -115,7 +114,6 @@ function BusinessSignUp() {
             <div>
               <input
                 className="border border-darkP rounded w-full py-2 px-4  leading-tight focus:outline-none focus:bg-white focus:border-darkBeige"
-                id="inline-full-name"
                 type="text"
                 placeholder="Your Name"
                 value={userName}
@@ -130,7 +128,6 @@ function BusinessSignUp() {
             <div>
               <input
                 className="border border-darkP rounded w-full py-2 px-4  leading-tight focus:outline-none focus:bg-white focus:border-darkBeige"
-                id="inline-full-name"
                 type="text"
                 placeholder="Your Position in the Company"
                 value={position}
@@ -145,7 +142,6 @@ function BusinessSignUp() {
             <div>
               <input
                 className="border border-darkP rounded w-full py-2 px-4  leading-tight focus:outline-none focus:bg-white focus:border-darkBeige"
-                id="inline-full-name"
                 type="tel"
                 placeholder="Your Company's Phone Number"
                 value={number}
@@ -160,7 +156,6 @@ function BusinessSignUp() {
             <div>
               <input
                 className="border border-darkP rounded w-full py-2 px-4  leading-tight focus:outline-none focus:bg-white focus:border-darkBeige"
-                id="inline-full-name"
                 type="tel"
                 placeholder="Your Company's Location"
                 value={location}
