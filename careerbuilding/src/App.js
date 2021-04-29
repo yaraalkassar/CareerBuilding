@@ -20,7 +20,9 @@ import Moredetails3 from "./Components/Vacancies/moredetails3";
 function App() {
   const [userSigned, setUserSigned] = useState();
   useEffect(() => {
-    setUserSigned(firebase.checkUser());
+    if (firebase.auth.currentUser) {
+      console.log("exists");
+    }
   }, []);
 
   const [firebaseInitialized, setFirebaseInitialized] = useState(false);
@@ -36,13 +38,13 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/Vacancy">
+          <Route exact path="/PostVacancy">
             <Vacancies />
           </Route>
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route exact path="/Vacancy1">
+          <Route exact path="/Vacancy">
             <Vacanciesstudent />
           </Route>
           <Route exact path="/moredetails">
