@@ -15,7 +15,7 @@ function moredetails3() {
             <img src={NYN} className="w-20 h-20" alt="NYN" />
           </div>
           <span className="font-semibold title-font text-gray-700">
-          NISHTMAN YOUTH NETWORK
+            NISHTMAN YOUTH NETWORK
           </span>
           <span className="mt-1 text-gray-500 text-sm">20 Jan 2021</span>
         </div>
@@ -41,8 +41,9 @@ function moredetails3() {
               Job Description:
             </label>
             <p className="text-m  text-darkerBlue">
-            Marketing Strategist is a marketing professional who works with the marketing team member(s) to
-             assure the execution of high-quality marketing strategies within the defined time frame. 
+              Marketing Strategist is a marketing professional who works with
+              the marketing team member(s) to assure the execution of
+              high-quality marketing strategies within the defined time frame.
             </p>
           </div>
         </div>
@@ -57,7 +58,8 @@ function moredetails3() {
             </label>
             <div className="">
               <p className="text-m  text-darkerBlue">
-                1- Excellent communication, interpersonal and presentation skills.
+                1- Excellent communication, interpersonal and presentation
+                skills.
               </p>
               <br />
               <p className="text-m  text-darkerBlue">
@@ -79,7 +81,8 @@ function moredetails3() {
               Responsibilities:
             </label>
             <p className="text-m  text-darkerBlue">
-              1- Set specific marketing goals that align with the overall direction and business goals.
+              1- Set specific marketing goals that align with the overall
+              direction and business goals.
             </p>
             <br />
             <p className="text-m  text-darkerBlue">

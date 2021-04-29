@@ -95,10 +95,10 @@ function BusinessSignUp() {
                   onChange={async (e) => {
                     await firebase.uploadFile(
                       e.target.files[0],
-                      `profile-images/${email}/image`
+                      `profile-images/${email}/image.jpg`
                     );
                     await firebase
-                      .downloadFile(`profile-images/${email}/image`)
+                      .downloadFile(`profile-images/${email}/image.jpg`)
                       .then((url) => {
                         setBusinessLogo(url);
                       });

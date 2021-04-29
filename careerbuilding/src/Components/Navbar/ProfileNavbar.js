@@ -54,6 +54,14 @@ export default function ProfileNavbar() {
               <p className="lg:px-4 ">{"Home"}</p>
             </NavLink>
             <NavLink
+              exact
+              to="/Profile"
+              className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
+              activeClassName="border-paleYellow border-b"
+            >
+              <p className="lg:px-4 ">{"Profile"}</p>
+            </NavLink>
+            <NavLink
               to="/PostVacancy"
               className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
               activeClassName="border-paleYellow border-b"

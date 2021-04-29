@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import firebase from "../../firebase/firebase";
-const VacanciesStudent = () => {
+const MyVacancies = () => {
   const [vacanciesList, setVacanciesList] = useState([]);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const VacanciesStudent = () => {
 
   async function getVacanies() {
     try {
-      await firebase.getVacanies(setVacanciesList);
+      await firebase.getUserVacancies(setVacanciesList);
     } catch {
       alert("not working");
     }
@@ -80,4 +80,4 @@ const VacanciesStudent = () => {
   );
 };
 
-export default VacanciesStudent;
+export default MyVacancies;

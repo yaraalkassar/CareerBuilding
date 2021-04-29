@@ -92,7 +92,7 @@ class Firebase {
   }
 
   getCurrentUsername() {
-    return this.auth.currentUser && this.auth.currentUser.displayName;
+    return this.auth.currentUser && this.auth.currentUser.companyName;
   }
 
   userUpdated(callback) {
@@ -129,17 +129,18 @@ class Firebase {
     });
   }
   async createVacancy(j_name, j_desc, j_req, j_resp, j_type) {
+    const user = await this.getCurrentUser();
     const id = this.db.collection("vacancies").doc().id;
     await this.db
       .collection("vacancies")
       .doc(id)
       .set({
         v_Id: id,
-        // authorId: this.getCurrentUid(),
-        // createdAt: new Date().toLocaleString("en-US"),
-        // timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        // authorName: this.getCurrentUsername(),
-        // authorAvatar: this.currentUser.profilePicture,
+        authorId: user.uid,
+        createdAt: new Date().toLocaleString("en-US"),
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        authorName: user.companyName,
+        authorAvatar: user.businessLogo,
         j_name: j_name,
         j_desc: j_desc,
         j_req: j_req,
@@ -161,16 +162,16 @@ class Firebase {
       });
   }
 
-  async getUserPosts(setPosts, uid) {
+  async getUserVacancies(setVacancies, uid) {
     this.db
-      .collection("posts")
+      .collection("vacancies")
       .where("authorId", "==", uid ? uid : this.getCurrentUid())
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
-        const posts = snapshot.docs.map((post) => {
+        const vacancies = snapshot.docs.map((post) => {
           return post.data();
         });
-        setPosts(posts);
+        setVacancies(vacancies);
       });
   }
 

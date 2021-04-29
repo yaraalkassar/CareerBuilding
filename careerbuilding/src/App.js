@@ -3,22 +3,18 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar.js";
 import ProfileNavbar from "./Components/Navbar/ProfileNavbar";
-
 import Home from "./Components/Home/Home";
 import Contact from "./Components/ContactUs/Contact";
 import About from "./Components/AboutUs/About";
 import Login from "./Components/Login/Login";
-import SignUp from "./Components/SignUp/SignUp";
 import BusinessSignUp from "./Components/SignUp/BusinessSignUp";
 import Profile from "./Components/Profile/Profile";
 import firebase from "./firebase/firebase";
 import Loader from "./Components/loader/loader";
 import Vacancies from "./Components/Vacancies/Vacancies";
-import Vacanciesstudent from "./Components/Vacancies/vacanciesstudent";
-import Moredetails from "./Components/Vacancies/moredetails";
-import Moredetails2 from "./Components/Vacancies/moredetails2";
+import VacanciesStudent from "./Components/Vacancies/VacanciesStudent";
 import Moredetails3 from "./Components/Vacancies/moredetails3";
-
+import MyVacancies from "./Components/Profile/MyVacancies";
 function App() {
   const [userSigned, setUserSigned] = useState(false);
   useEffect(() => {
@@ -38,6 +34,9 @@ function App() {
       <Router>
         {userSigned ? <ProfileNavbar /> : <Navbar />}
         <Switch>
+          <Route exact path="/MyVacancies">
+            <MyVacancies />
+          </Route>
           <Route exact path="/PostVacancy">
             <Vacancies />
           </Route>
@@ -45,13 +44,7 @@ function App() {
             <Profile />
           </Route>
           <Route exact path="/Vacancy">
-            <Vacanciesstudent />
-          </Route>
-          <Route exact path="/moredetails">
-            <Moredetails />
-          </Route>
-          <Route exact path="/moredetails2">
-            <Moredetails2 />
+            <VacanciesStudent />
           </Route>
           <Route exact path="/moredetails3">
             <Moredetails3 />
