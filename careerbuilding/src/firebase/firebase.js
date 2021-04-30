@@ -85,6 +85,8 @@ class Firebase {
       });
   }
 
+  async addCV() {}
+
   isInitialized() {
     return new Promise((resolve) => {
       this.auth.onAuthStateChanged(resolve);
@@ -140,6 +142,7 @@ class Firebase {
         createdAt: new Date().toLocaleString("en-US"),
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         authorName: user.companyName,
+        authorEmail: user.email,
         authorAvatar: user.businessLogo,
         j_name: j_name,
         j_desc: j_desc,
