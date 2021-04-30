@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 function Vacancy() {
   const [vacancy, setVacancy] = useState([]);
   const [userSigned, setUserSigned] = useState(false);
+  const [cv, setCV] = useState("");
+
   useEffect(() => {
     firebase.userUpdated(setUserSigned);
   }, []);
@@ -13,6 +15,7 @@ function Vacancy() {
   useEffect(() => {
     getVacancyDetails();
   });
+  function apply() {}
 
   async function getVacancyDetails() {
     try {
@@ -109,23 +112,20 @@ function Vacancy() {
         </div>
 
         {!userSigned ? (
-          <div className="uppercase  text-darkerBlue text-s font-bold py-8 flex flex-col w-1/4 space-y-2">
+          <div className="uppercase text-darkerBlue text-s font-bold py-8 flex flex-col w-1/4 space-y-2">
             <div>
               <label>
-                Upload CV:
+                For Applying to this job please send an email to:
                 <br />
               </label>
             </div>
-            <div className="flex items-center justify-center space-x-1">
-              <input
-                className="w-full  bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-darkerBlue focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                id="uploadcv"
-                type="file"
-              ></input>
-
-              <button className="flex mx-auto text-darkerBlue font-bold bg-paleYellow border-0 py-2 px-8 focus:outline-none hover:bg-dakBlue rounded text-lg">
-                APPLY
-              </button>
+            <div className="flex items-center justify-center space-x-1 font-normal">
+              <a
+                href={"mailto:" + vacancy.authorEmail}
+                className="text-center text-darkerBlue text-base"
+              >
+                {vacancy.authorEmail}
+              </a>
             </div>
           </div>
         ) : (

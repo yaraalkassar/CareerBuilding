@@ -74,13 +74,6 @@ export default function ProfileNavbar() {
             >
               <p className="lg:px-4 ">{"My Vacancies"}</p>
             </NavLink>
-            <NavLink
-              to="/Applications"
-              className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
-              activeClassName="border-paleYellow border-b"
-            >
-              <p className="lg:px-4 ">{"Applications"}</p>
-            </NavLink>
           </div>
           <div className={`flex justify-around w-1/6 py-4 md:pt-0  `}>
             <NavLink to="/">
