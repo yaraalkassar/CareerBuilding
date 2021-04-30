@@ -51,7 +51,7 @@ export default function Navbar() {
               <p className="lg:px-4 ">{"Home"}</p>
             </NavLink>
             <NavLink
-              to="/Vacancy"
+              to="/Vacancies"
               className="px-4 mx-4 py-4 lg:py-0 border-b hover:border-paleYellow"
               activeClassName="border-paleYellow border-b"
             >

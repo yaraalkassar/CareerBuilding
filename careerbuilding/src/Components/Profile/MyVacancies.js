@@ -52,7 +52,7 @@ const MyVacancies = () => {
                       {vacancy.j_name}
                     </h2>
                     <p className="leading-relaxed">{vacancy.j_desc}</p>
-                    <Link to="/moredetails3">
+                    <Link to={`/Vacancies/${vacancy.v_Id}`}>
                       <p className="text-darkerBlue inline-flex items-center mt-4 font-bold">
                         More Details
                         <svg

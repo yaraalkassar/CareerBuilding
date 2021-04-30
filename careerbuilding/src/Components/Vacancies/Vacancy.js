@@ -1,6 +1,6 @@
 import React from "react";
 import NYN from "../images/NYN.jpg";
-function moredetails3() {
+function Vacancy() {
   return (
     <div>
       <div className=" font-bold text-2xl text-darkerBlue pt-8">
@@ -132,4 +132,4 @@ function moredetails3() {
   );
 }
 
-export default moredetails3;
+export default Vacancy;

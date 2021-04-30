@@ -12,8 +12,8 @@ import Profile from "./Components/Profile/Profile";
 import firebase from "./firebase/firebase";
 import Loader from "./Components/loader/loader";
 import Vacancies from "./Components/Vacancies/Vacancies";
+import Vacancy from "./Components/Vacancies/Vacancy";
 import VacanciesStudent from "./Components/Vacancies/VacanciesStudent";
-import Moredetails3 from "./Components/Vacancies/moredetails3";
 import MyVacancies from "./Components/Profile/MyVacancies";
 function App() {
   const [userSigned, setUserSigned] = useState(false);
@@ -34,6 +34,7 @@ function App() {
       <Router>
         {userSigned ? <ProfileNavbar /> : <Navbar />}
         <Switch>
+          <Route exact path="/Vacancies/:id" render={() => <Vacancy />} />
           <Route exact path="/MyVacancies">
             <MyVacancies />
           </Route>
@@ -43,12 +44,10 @@ function App() {
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route exact path="/Vacancy">
+          <Route exact path="/Vacancies">
             <VacanciesStudent />
           </Route>
-          <Route exact path="/moredetails3">
-            <Moredetails3 />
-          </Route>
+
           <Route path="/Contact">
             <Contact />
           </Route>
