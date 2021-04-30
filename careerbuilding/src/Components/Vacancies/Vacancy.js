@@ -1,6 +1,24 @@
-import React from "react";
-import NYN from "../images/NYN.jpg";
+import React, { useEffect, useState } from "react";
+import firebase from "../../firebase/firebase";
+import { useParams } from "react-router-dom";
+
 function Vacancy() {
+  const [vacancy, setVacancy] = useState([]);
+  // const [vacancy, setCurrentVacancy] = useState();
+  const id = useParams().id;
+
+  useEffect(() => {
+    getVacancyDetails();
+  });
+
+  async function getVacancyDetails() {
+    try {
+      await firebase.getMoreDetails(setVacancy, id);
+      // setCurrentVacancy(vacancy[0]);
+    } catch {
+      alert("not working");
+    }
+  }
   return (
     <div>
       <div className=" font-bold text-2xl text-darkerBlue pt-8">
@@ -12,12 +30,18 @@ function Vacancy() {
       <div className=" flex justify-center items-center py-2 flex-wrap md:flex-nowrap ">
         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col ">
           <div className="flex justify-center items-center">
-            <img src={NYN} className="w-20 h-20" alt="NYN" />
+            <img
+              src={vacancy.authorAvatar}
+              className="w-20 h-20"
+              alt={vacancy.authorName}
+            />
           </div>
-          <span className="font-semibold title-font text-gray-700">
-            NISHTMAN YOUTH NETWORK
+          <span className="font-semibold title-font text-gray-700 capitalize">
+            {vacancy.authorName}
           </span>
-          <span className="mt-1 text-gray-500 text-sm">20 Jan 2021</span>
+          <span className="mt-1 text-gray-500 text-sm">
+            {vacancy.createdAt}
+          </span>
         </div>
       </div>
 
@@ -26,25 +50,21 @@ function Vacancy() {
           <div className="md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase  text-darkerBlue text-s font-bold mb-2"
-              for="job-name"
+              htmlFor="job-name"
             >
               Job Name:
             </label>
-            <p className="text-m  text-darkerBlue">Marketing Strategy</p>
+            <p className="text-m  text-darkerBlue">{vacancy.j_name}</p>
           </div>
 
           <div className="md:w-2/5 px-3 ">
             <label
               className="block uppercase  text-darkerBlue text-s font-bold mb-2"
-              for="job-description"
+              htmlFor="job-description"
             >
               Job Description:
             </label>
-            <p className="text-m  text-darkerBlue">
-              Marketing Strategist is a marketing professional who works with
-              the marketing team member(s) to assure the execution of
-              high-quality marketing strategies within the defined time frame.
-            </p>
+            <p className="text-m  text-darkerBlue">{vacancy.j_desc}</p>
           </div>
         </div>
 
@@ -52,59 +72,35 @@ function Vacancy() {
           <div className="md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase  text-darkerBlue text-s font-bold mb-2"
-              for="Requirements"
+              htmlFor="Requirements"
             >
               Requirements:
             </label>
             <div className="">
-              <p className="text-m  text-darkerBlue">
-                1- Excellent communication, interpersonal and presentation
-                skills.
-              </p>
-              <br />
-              <p className="text-m  text-darkerBlue">
-                2- Fluency in English and Kurdish and arabic.
-              </p>
-
-              <br />
-              <p className=" text-m  text-darkerBlue">
-                3- Outstanding organizational and time management skills.
-              </p>
+              <p className="text-m  text-darkerBlue">{vacancy.j_req}</p>
             </div>
           </div>
 
           <div className="md:w-2/5 px-3">
             <label
               className="block uppercase  text-darkerBlue text-s font-bold mb-2"
-              for="Responsibilities"
+              htmlFor="Responsibilities"
             >
               Responsibilities:
             </label>
-            <p className="text-m  text-darkerBlue">
-              1- Set specific marketing goals that align with the overall
-              direction and business goals.
-            </p>
-            <br />
-            <p className="text-m  text-darkerBlue">
-              2- Research market to identify new opportunities.
-            </p>
-
-            <br />
-            <p className=" text-m  text-darkerBlue">
-              3- Use customer feedback to ensure client satisfaction.
-            </p>
+            <p className="text-m  text-darkerBlue">{vacancy.j_resp}</p>
           </div>
         </div>
 
         <div>
           <label
-            for="job-type "
+            htmlFor="job-type"
             className="block uppercase  text-darkerBlue text-s font-bold mb-2"
           >
             Job Type:
           </label>
           <div className="text-center text-darkerBlue ">
-            <p> Full-Time</p>
+            <p> {vacancy.j_type}</p>
           </div>
         </div>
 

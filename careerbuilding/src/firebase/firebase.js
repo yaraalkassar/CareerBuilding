@@ -175,6 +175,19 @@ class Firebase {
       });
   }
 
+  async getMoreDetails(setVacancy, v_id) {
+    this.db
+      .collection("vacancies")
+      .where("v_Id", "==", v_id)
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        const vacancy = snapshot.docs.map((post) => {
+          return post.data();
+        });
+        setVacancy(vacancy[0]);
+      });
+  }
+
   async getFriendsPosts(setPosts) {
     await this.getCurrentUser();
     const feedList = [...this.currentUser.friends, this.currentUser.uid];
