@@ -188,7 +188,7 @@ class Firebase {
       });
   }
 
-  async sendFeedback(body) {
+  async sendFeedback(name, email, body) {
     const id = this.db.collection("feedback").doc().id;
     await this.db
       .collection("feedback")
@@ -197,6 +197,8 @@ class Firebase {
         createdAt: new Date().toLocaleString("en-US"),
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         text: body,
+        senderName: name,
+        senderEmail: email,
       })
       .catch((err) => console.log(err));
   }
