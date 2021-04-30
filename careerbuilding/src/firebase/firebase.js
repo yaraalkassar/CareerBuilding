@@ -188,21 +188,6 @@ class Firebase {
       });
   }
 
-  async getFriendsPosts(setPosts) {
-    await this.getCurrentUser();
-    const feedList = [...this.currentUser.friends, this.currentUser.uid];
-    this.db
-      .collection("posts")
-      .where("authorId", "in", feedList)
-      .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) => {
-        const posts = snapshot.docs.map((post) => {
-          return post.data();
-        });
-        setPosts(posts);
-      });
-  }
-
   async sendFeedback(body) {
     const id = this.db.collection("feedback").doc().id;
     await this.db
@@ -216,19 +201,17 @@ class Firebase {
       .catch((err) => console.log(err));
   }
 
-  async checkUsername(username) {
-    let notExists = true;
-    await this.db
-      .collection("users")
-      .where("username", "==", username)
-      .get()
-      .then((doc) => {
-        notExists = doc.empty;
-      })
-      .catch((err) => {
-        console.log("Error getting document", err);
+  async getSearchedVacanies(name, setVacancies) {
+    this.db
+      .collection("vacancies")
+      .where("j_name", "==", name)
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        const vacancy = snapshot.docs.map((post) => {
+          return post.data();
+        });
+        setVacancies(vacancy);
       });
-    return notExists;
   }
 }
 
