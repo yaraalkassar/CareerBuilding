@@ -4,7 +4,10 @@ import { useParams } from "react-router-dom";
 
 function Vacancy() {
   const [vacancy, setVacancy] = useState([]);
-  // const [vacancy, setCurrentVacancy] = useState();
+  const [userSigned, setUserSigned] = useState(false);
+  useEffect(() => {
+    firebase.userUpdated(setUserSigned);
+  }, []);
   const id = useParams().id;
 
   useEffect(() => {
@@ -14,16 +17,17 @@ function Vacancy() {
   async function getVacancyDetails() {
     try {
       await firebase.getMoreDetails(setVacancy, id);
-      // setCurrentVacancy(vacancy[0]);
     } catch {
       alert("not working");
     }
   }
   return (
     <div>
-      <div className=" font-bold text-2xl text-darkerBlue pt-8">
+      <div className="font-bold text-2xl text-darkerBlue pt-8">
         <div className="flex justify-center items-center mt-2 mb-4">
-          <h1 className="md:w-1/6 border-b-8 border-paleBlue"> APPLY</h1>
+          <h1 className="md:w-1/6 border-b-8 border-paleBlue uppercase">
+            {userSigned ? vacancy.j_name : "apply"}
+          </h1>
         </div>
       </div>
 
@@ -45,7 +49,7 @@ function Vacancy() {
         </div>
       </div>
 
-      <div className="bg-paleBlue px-4 pt-6 pb-8 flex flex-col justify-center items-center">
+      <div className="bg-paleBlue px-4 py-12 flex flex-col justify-center items-center">
         <div className="md:flex justify-between mb-6">
           <div className="md:w-1/2 px-3 mb-6 md:mb-0">
             <label
@@ -104,25 +108,29 @@ function Vacancy() {
           </div>
         </div>
 
-        <div className="uppercase  text-darkerBlue text-s font-bold py-8 flex flex-col w-1/4 space-y-2">
-          <div>
-            <label>
-              Upload CV:
-              <br />
-            </label>
-          </div>
-          <div className="flex items-center justify-center space-x-1">
-            <input
-              className="w-full  bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-darkerBlue focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              id="uploadcv"
-              type="file"
-            ></input>
+        {!userSigned ? (
+          <div className="uppercase  text-darkerBlue text-s font-bold py-8 flex flex-col w-1/4 space-y-2">
+            <div>
+              <label>
+                Upload CV:
+                <br />
+              </label>
+            </div>
+            <div className="flex items-center justify-center space-x-1">
+              <input
+                className="w-full  bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-darkerBlue focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                id="uploadcv"
+                type="file"
+              ></input>
 
-            <button className="flex mx-auto text-darkerBlue font-bold bg-paleYellow border-0 py-2 px-8 focus:outline-none hover:bg-dakBlue rounded text-lg">
-              APPLY
-            </button>
+              <button className="flex mx-auto text-darkerBlue font-bold bg-paleYellow border-0 py-2 px-8 focus:outline-none hover:bg-dakBlue rounded text-lg">
+                APPLY
+              </button>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );

@@ -91,12 +91,12 @@ const Vacancies = () => {
               <select
                 id="job-type"
                 ref={j_type}
-                defaultValue="intern"
+                defaultValue="Internship"
                 className="w-full text-center md:w-1/5 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-darkerBlue focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
-                <option value="full">Full-Time</option>
-                <option value="part">Part-Time</option>
-                <option value="intern">Internship</option>
+                <option value="Full-Time">Full-Time</option>
+                <option value="Part-Time">Part-Time</option>
+                <option value="Internship">Internship</option>
               </select>
             </div>
           </div>
@@ -124,7 +124,7 @@ const Vacancies = () => {
   async function addVacancy(j_name, j_desc, j_req, j_resp, j_type) {
     try {
       await firebase.createVacancy(j_name, j_desc, j_req, j_resp, j_type);
-      history.pushState("/MyVacancies");
+      history.push("/MyVacancies");
     } catch (e) {
       console.log(e);
       alert("not working");
