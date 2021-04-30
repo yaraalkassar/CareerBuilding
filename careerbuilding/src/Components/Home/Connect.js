@@ -16,7 +16,7 @@ export default function Connect() {
             }
           </h6>
           <div>
-            <Link to="./Login">
+            <Link to="./Join">
               <button
                 className=" bg-paleYellow text-darkerBlue w-20 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none m-6 "
                 type="button"
