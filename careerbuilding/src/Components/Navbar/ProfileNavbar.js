@@ -1,5 +1,5 @@
 import logo from "../images/goal.svg";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { NavLink, useHistory } from "react-router-dom";
 import firebase from "../../firebase/firebase";
@@ -7,7 +7,6 @@ import firebase from "../../firebase/firebase";
 export default function ProfileNavbar() {
   let history = useHistory();
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [userSigned, setUserSigned] = useState();
 
   return (
     <>

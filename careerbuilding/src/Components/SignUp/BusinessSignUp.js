@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import firebase from "./../../firebase/firebase";
 import { useHistory } from "react-router-dom";
-import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 
 function BusinessSignUp() {
@@ -212,10 +211,5 @@ function BusinessSignUp() {
     }
   }
 }
-
-// BusinessSignUp.propTypes = {
-//   email: PropTypes.string.isRequired,
-//   password: PropTypes.string.isRequired,
-// };
 
 export default BusinessSignUp;

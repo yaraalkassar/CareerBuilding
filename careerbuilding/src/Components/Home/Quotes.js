@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import QuoteIcon from "../images/quotes.svg";
 import { useStateIfMounted } from "use-state-if-mounted";
 const Quotes = () => {
@@ -11,6 +11,7 @@ const Quotes = () => {
       .then(function (data) {
         setQuotes(data);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   function runOncePerDay() {
     if (localStorage.getItem("randomNumber") === null) {
