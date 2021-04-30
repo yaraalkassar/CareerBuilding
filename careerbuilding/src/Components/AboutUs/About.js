@@ -1,6 +1,8 @@
 import React from "react";
 import Footer from "../Home/Footer";
 import volunteer from "../images/volunteer-logo.png";
+import Yara from "../images/Yara.jpeg";
+import Deveen from "../images/Deveen.jpeg";
 
 const About = () => {
   return (
@@ -46,13 +48,14 @@ const About = () => {
               OUR TEAM
             </h1>
           </div>
+
           <div className="flex flex-wrap lg:w-3/4 mx-auto justify-center items-center">
             <div className="p-4 lg:w-1/2 ">
               <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
                 <img
                   alt="team"
                   className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                  src="https://dummyimage.com/204x204"
+                  src={Deveen}
                 />
                 <div className="flex-grow sm:pl-8">
                   <h2 className="title-font font-medium text-lg ">
@@ -108,7 +111,7 @@ const About = () => {
                 <img
                   alt="team"
                   className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                  src="https://dummyimage.com/206x206"
+                  src={Yara}
                 />
                 <div className="flex-grow sm:pl-8">
                   <h2 className="title-font font-medium text-lg ">
