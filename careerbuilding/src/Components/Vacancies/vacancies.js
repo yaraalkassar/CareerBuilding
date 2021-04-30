@@ -1,14 +1,14 @@
-import React, { useState, useRef } from "react";
-import { useForm } from "react-hook-form";
+import React, { useRef } from "react";
 import firebase from "../../firebase/firebase";
+import { useHistory } from "react-router-dom";
 
 const Vacancies = () => {
+  let history = useHistory();
   let j_name = useRef("");
   let j_desc = useRef("");
   let j_req = useRef("");
   let j_resp = useRef("");
   let j_type = useRef("");
-  // const { addV, getValues } = useForm();
 
   return (
     <div className=" font-bold text-2xl text-darkerBlue pt-8">
@@ -124,6 +124,7 @@ const Vacancies = () => {
   async function addVacancy(j_name, j_desc, j_req, j_resp, j_type) {
     try {
       await firebase.createVacancy(j_name, j_desc, j_req, j_resp, j_type);
+      history.pushState("/MyVacancies");
     } catch (e) {
       console.log(e);
       alert("not working");
