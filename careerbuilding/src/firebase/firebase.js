@@ -30,18 +30,6 @@ class Firebase {
     this.conversationId = null;
   }
 
-  async queryUsersCollectionForMatchingUsername(searchedValue, setFoundUsers) {
-    const foundUsers = [];
-    return await this.db
-      .collection("users")
-      .where("username", "==", `${searchedValue}`)
-      .get()
-      .then((data) =>
-        data.forEach((doc) => foundUsers.push({ uid: doc.id, ...doc.data() }))
-      )
-      .then(() => setFoundUsers(foundUsers));
-  }
-
   login(email, password) {
     return this.auth.signInWithEmailAndPassword(email, password);
   }
@@ -84,8 +72,6 @@ class Firebase {
         }),
       });
   }
-
-  async addCV() {}
 
   isInitialized() {
     return new Promise((resolve) => {
