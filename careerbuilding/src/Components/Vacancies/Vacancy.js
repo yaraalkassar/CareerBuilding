@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 function Vacancy() {
   const [vacancy, setVacancy] = useState([]);
   const [userSigned, setUserSigned] = useState(false);
-  const [cv, setCV] = useState("");
 
   useEffect(() => {
     firebase.userUpdated(setUserSigned);
@@ -15,7 +14,6 @@ function Vacancy() {
   useEffect(() => {
     getVacancyDetails();
   });
-  function apply() {}
 
   async function getVacancyDetails() {
     try {
