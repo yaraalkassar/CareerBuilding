@@ -59,7 +59,9 @@ function Vacancy() {
             >
               Job Name:
             </label>
-            <p className="text-m  text-darkerBlue">{vacancy.j_name}</p>
+            <p className="text-m  text-darkerBlue capitalize">
+              {vacancy.j_name}
+            </p>
           </div>
 
           <div className="md:w-2/5 px-3 ">

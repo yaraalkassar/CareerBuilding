@@ -17,7 +17,7 @@ const VacanciesStudent = () => {
   }
   async function getSearchedVacanies(name) {
     try {
-      await firebase.getSearchedVacanies(name, setVacanciesList);
+      await firebase.secondSearchAttempt(name.toLowerCase(), setVacanciesList);
     } catch (e) {
       console.log(e);
       alert("You haven't entered a job name");
@@ -78,7 +78,7 @@ const VacanciesStudent = () => {
                     </span>
                   </div>
                   <div className="md:flex-grow">
-                    <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
+                    <h2 className="text-2xl font-medium text-gray-900 title-font mb-2 capitalize">
                       {vacancy.j_name}
                     </h2>
                     <p className="leading-relaxed">{vacancy.j_desc}</p>

@@ -103,7 +103,7 @@ const Vacancies = () => {
           <button
             onClick={(e) => {
               e.preventDefault();
-              //  console.log(j_name.current.value);
+              console.log(j_name.current.value.toLowerCase());
               addVacancy(
                 j_name.current.value,
                 j_desc.current.value,

@@ -24,10 +24,6 @@ class Firebase {
     this.storage = firebase.storage();
     this.storageRef = this.storage.ref();
     this.currentUser = {};
-    this.listenerId = null;
-    this.chatroomObj = null;
-    this.unsubscribe = null;
-    this.conversationId = null;
   }
 
   login(email, password) {
@@ -192,11 +188,27 @@ class Firebase {
       .catch((err) => console.log(err));
   }
 
+  // this search takes full name only
+
   async getSearchedVacanies(name, setVacancies) {
     this.db
       .collection("vacancies")
       .where("j_name", "==", name)
       .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        const vacancy = snapshot.docs.map((post) => {
+          return post.data();
+        });
+        setVacancies(vacancy);
+      });
+  }
+  // this search takes first or full name
+
+  async secondSearchAttempt(queryText, setVacancies) {
+    this.db
+      .collection("vacancies")
+      .where("j_name", ">=", queryText)
+      .where("j_name", "<=", queryText + "~")
       .onSnapshot((snapshot) => {
         const vacancy = snapshot.docs.map((post) => {
           return post.data();
